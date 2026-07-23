@@ -94,5 +94,20 @@
 
   <script src="script.js"></script>
   <script src="render.js"></script>
+
+  <!-- Netlify Identity: catches invite/recovery/confirmation links, which
+       redirect to the site root, and shows the set-password popup. -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
