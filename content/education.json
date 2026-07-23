@@ -1,0 +1,15 @@
+{
+  "items": [
+    { "highlight": true, "icon": "⚖", "year": "April 2026 – Present", "title": "Master of Laws (LLM)", "field": "International Law, Security & Diplomacy", "institution": "University of Gold Coast" },
+    { "highlight": true, "icon": "📖", "year": "September 2022 – May 2026  ✅ Completed", "title": "Bachelor of Laws (LLB)", "field": "Law", "institution": "Kings University College" },
+    { "highlight": false, "icon": "💼", "year": "November 2024 – October 2025", "title": "Master of Business Administration (MBA)", "field": "Business Administration & Management", "institution": "Atlanta College of Liberal Arts and Sciences" },
+    { "highlight": false, "icon": "🏛", "year": "September 2015", "title": "Bachelor of Arts (BA)", "field": "Political Science", "institution": "University of Ghana" },
+    { "highlight": false, "icon": "🎓", "year": "May 2022 – January 2023", "title": "Level 7 Diploma", "field": "Management and Strategic Leadership", "institution": "London Inspire College" },
+    { "highlight": false, "icon": "🌐", "year": "November 2021 – December 2021", "title": "Certificate", "field": "English Common Law", "institution": "University of London" },
+    { "highlight": false, "icon": "🤖", "year": "May 2026", "title": "Google AI Essentials Certificate", "field": "Artificial Intelligence", "institution": "Google (via Coursera)" },
+    { "highlight": false, "icon": "📊", "year": "2022 – 2023", "title": "Certificates in Data Analysis", "field": "Data Analysis", "institution": "Queen Mary Academy & Training Express" },
+    { "highlight": false, "icon": "⚖", "year": "March 2022 – September 2022", "title": "Diploma in Paralegal Studies", "field": "Paralegal", "institution": "Lead Academy" },
+    { "highlight": false, "icon": "📚", "year": "May 2018 – December 2020", "title": "Diploma in Legal Studies", "field": "Legal Studies", "institution": "Alison University" },
+    { "highlight": false, "icon": "🏫", "year": "October 2012 – June 2015", "title": "WASSCE", "field": "Senior Secondary Education", "institution": "St. John's Grammar Senior High School" }
+  ]
+}

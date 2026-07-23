@@ -1,0 +1,181 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+site_url: https://benjaaddo.netlify.app
+display_url: https://benjaaddo.netlify.app
+
+collections:
+  - name: "home"
+    label: "Home Page"
+    files:
+      - file: "content/home.json"
+        label: "Homepage Content"
+        name: "home"
+        fields:
+          - { label: "Location Tag", name: "tag", widget: "string" }
+          - { label: "Full Name", name: "name", widget: "string" }
+          - label: "Rotating Titles"
+            name: "titles"
+            widget: "list"
+            hint: "These type/erase in a loop under your name."
+            field: { label: "Title", name: "title", widget: "string" }
+          - label: "Badges"
+            name: "badges"
+            widget: "list"
+            hint: "Short badges shown under the hero, e.g. '⚖ LLB Graduate & LLM Candidate'"
+            field: { label: "Badge Text", name: "text", widget: "string" }
+
+  - name: "about"
+    label: "About Page"
+    files:
+      - file: "content/about.json"
+        label: "About Content"
+        name: "about"
+        fields:
+          - { label: "Profile Photo", name: "photo", widget: "image" }
+          - { label: "Side Card - Label", name: "cardLabel", widget: "string" }
+          - { label: "Side Card - Value", name: "cardValue", widget: "string" }
+          - { label: "Side Card - Subtext", name: "cardSub", widget: "string" }
+          - { label: "Intro Sentence", name: "intro", widget: "text" }
+          - label: "Body Paragraphs"
+            name: "paragraphs"
+            widget: "list"
+            hint: "Wrap words in **double asterisks** to make them bold."
+            field: { label: "Paragraph", name: "text", widget: "text" }
+          - label: "Quick Facts"
+            name: "facts"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+
+  - name: "experience"
+    label: "Experience"
+    files:
+      - file: "content/experience.json"
+        label: "Experience Timeline"
+        name: "experience"
+        fields:
+          - label: "Timeline Items"
+            name: "items"
+            widget: "list"
+            summary: "{{title}} ({{date}})"
+            fields:
+              - { label: "Date Range", name: "date", widget: "string", hint: "e.g. '2022 – Present'" }
+              - { label: "Tag", name: "tag", widget: "string", hint: "Short category label, e.g. 'Legal'" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Organization", name: "org", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - name: "education"
+    label: "Education"
+    files:
+      - file: "content/education.json"
+        label: "Education Entries"
+        name: "education"
+        fields:
+          - label: "Entries"
+            name: "items"
+            widget: "list"
+            summary: "{{title}} — {{institution}}"
+            fields:
+              - { label: "Highlight this entry", name: "highlight", widget: "boolean", default: false }
+              - { label: "Icon (single emoji)", name: "icon", widget: "string" }
+              - { label: "Year / Date Range", name: "year", widget: "string" }
+              - { label: "Degree / Title", name: "title", widget: "string" }
+              - { label: "Field of Study", name: "field", widget: "string" }
+              - { label: "Institution", name: "institution", widget: "string" }
+
+  - name: "skills"
+    label: "Skills, Awards & Memberships"
+    files:
+      - file: "content/skills.json"
+        label: "Skills Content"
+        name: "skills"
+        fields:
+          - label: "Skills"
+            name: "skills"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Icon (single emoji)", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+          - label: "Languages"
+            name: "languages"
+            widget: "list"
+            field: { label: "Language", name: "lang", widget: "string" }
+          - label: "Awards"
+            name: "awards"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Icon (single emoji)", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "sub", widget: "string" }
+          - label: "Memberships"
+            name: "memberships"
+            widget: "list"
+            summary: "{{name}}"
+            hint: "Also shown on the Contact page."
+            fields:
+              - { label: "Organization Name", name: "name", widget: "string" }
+              - { label: "Years", name: "years", widget: "string" }
+
+  - name: "contact"
+    label: "Contact Info"
+    files:
+      - file: "content/contact.json"
+        label: "Contact Details"
+        name: "contact"
+        fields:
+          - { label: "Intro Text", name: "intro", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+
+  - name: "media"
+    label: "Media Gallery"
+    files:
+      - file: "content/media.json"
+        label: "Gallery Albums"
+        name: "media"
+        fields:
+          - label: "Albums"
+            name: "albums"
+            widget: "list"
+            summary: "{{title}} ({{category}})"
+            fields:
+              - { label: "Album Title", name: "title", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Political Work", value: "political" }
+                  - { label: "Student Leadership", value: "student" }
+                  - { label: "Community Service", value: "community" }
+                  - { label: "Business", value: "business" }
+                  - { label: "Media & Press", value: "media" }
+                  - { label: "Faith & Culture", value: "faith" }
+                  - { label: "Personal & Social", value: "personal" }
+              - { label: "Default Caption (lightbox)", name: "caption", widget: "string", required: false }
+              - label: "Photos"
+                name: "photos"
+                widget: "list"
+                summary: "{{fields.src}}"
+                fields:
+                  - { label: "Image", name: "src", widget: "image" }
+                  - { label: "Caption Override", name: "caption", widget: "string", required: false }
+              - label: "Videos"
+                name: "videos"
+                widget: "list"
+                required: false
+                hint: "Paste a YouTube/Vimeo link rather than uploading large raw video files."
+                fields:
+                  - { label: "Video URL", name: "url", widget: "string" }
+                  - { label: "Caption", name: "caption", widget: "string", required: false }

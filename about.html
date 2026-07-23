@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Addo Benjamin Armah</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar" class="scrolled">
+    <div class="nav-container">
+      <a class="nav-logo" href="index.html"><img src="images/ben_logo.png" alt="ABA Logo" class="nav-logo-img" /></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <p class="section-label">Who I Am</p>
+      <h1>About Me</h1>
+    </div>
+  </div>
+
+  <!-- ABOUT CONTENT -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid" id="aboutRoot">
+        <div class="about-photo-wrap">
+          <div class="about-photo-frame">
+            <img src="images/profile_photo.jpg" alt="Addo Benjamin Armah" class="about-photo" id="aboutPhoto" />
+          </div>
+          <div class="about-card">
+            <p class="about-card-label" id="aboutCardLabel"></p>
+            <p class="about-card-value" id="aboutCardValue"></p>
+            <p class="about-card-sub" id="aboutCardSub"></p>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="about-intro" id="aboutIntro"></p>
+          <div id="aboutParagraphs"></div>
+          <div class="about-facts" id="aboutFacts"></div>
+          <div class="about-actions">
+            <a href="experience.html" class="btn-primary">View Experience</a>
+            <a href="contact.html" class="btn-outline">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="footer-name">Addo Benjamin Armah</p>
+      <p class="footer-tagline">Law · Leadership · Development</p>
+      <p class="footer-copy">&copy; 2026 Addo Benjamin Armah. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="render.js"></script>
+</body>
+</html>

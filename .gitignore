@@ -1,0 +1,6 @@
+# Raw/original photo uploads (1.2GB+, not used by the live site)
+images_raw/
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db

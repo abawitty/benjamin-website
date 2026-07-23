@@ -1,0 +1,89 @@
+{
+  "skills": [
+    {
+      "icon": "⚖",
+      "title": "Legal Research & Analysis",
+      "desc": "Legislative research, policy analysis, and legal documentation across corporate, civil, and international law domains."
+    },
+    {
+      "icon": "🏛",
+      "title": "Corporate Governance",
+      "desc": "Company secretarial duties, statutory compliance, board meeting coordination, and regulatory filings."
+    },
+    {
+      "icon": "🗣",
+      "title": "Public Speaking & Advocacy",
+      "desc": "Experienced orator in parliamentary forums, moot court competitions, and international conferences across Africa."
+    },
+    {
+      "icon": "📋",
+      "title": "Administrative Management",
+      "desc": "Operations oversight, workflow optimisation, HR support, budget administration, and office management."
+    },
+    {
+      "icon": "🤝",
+      "title": "Leadership & Team Coordination",
+      "desc": "Led student unions, community leagues, and cross-border regional committees spanning 20+ countries."
+    },
+    {
+      "icon": "📊",
+      "title": "Data Analysis",
+      "desc": "Political data analysis, electoral results collation, administrative performance reporting, and AI tools literacy."
+    },
+    {
+      "icon": "🌍",
+      "title": "International Relations & Diplomacy",
+      "desc": "Representation at African and international forums; student exchange programmes and academic cooperation."
+    },
+    {
+      "icon": "📁",
+      "title": "Project Management",
+      "desc": "End-to-end project delivery across real estate, legal, community development, and political campaign contexts."
+    }
+  ],
+  "languages": [
+    "English",
+    "Ga",
+    "Twi"
+  ],
+  "awards": [
+    {
+      "icon": "🏅",
+      "title": "Global Goals Action Ambassador",
+      "sub": "Youthnow International – Official Partner of UN Human Settlement Program · 2018"
+    },
+    {
+      "icon": "🌐",
+      "title": "International Global Ambassador",
+      "sub": "International Global Ambassador Network · 2018"
+    },
+    {
+      "icon": "✍",
+      "title": "Most Prolific Writer",
+      "sub": "St. John's Grammar Senior High School · 2015"
+    },
+    {
+      "icon": "📈",
+      "title": "2nd Best Student in Economics",
+      "sub": "St. John's Grammar Senior High School · 2015"
+    }
+  ],
+  "memberships": [
+    {
+      "name": "African Youth and Talent Summit Network",
+      "years": "March 2017 – Present"
+    },
+    {
+      "name": "SpreadAid International",
+      "years": "May 2016 – Present"
+    },
+    {
+      "name": "Young African Leaders Initiative Network",
+      "years": "January 2015 – Present"
+    },
+    {
+      "name": "Coalition for Strategic Development (COSTRADE)",
+      "years": "June 2016 – August 2019"
+    }
+  ]
+}

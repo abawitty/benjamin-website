@@ -1,0 +1,18 @@
+{
+  "photo": "images/profile_photo.jpg",
+  "cardLabel": "Global Goals",
+  "cardValue": "Action Ambassador",
+  "cardSub": "UN Human Settlement Program",
+  "intro": "I am a driven professional combining legal expertise, strategic leadership, and a deep commitment to public service to create meaningful impact across Ghana and beyond.",
+  "paragraphs": [
+    "A proud graduate of **Kings University College (LLB, May 2026)**, I am now pursuing an **LLM in International Law, Security & Diplomacy** at the University of Gold Coast. I believe in the power of interdisciplinary knowledge to solve complex challenges. My academic journey is complemented by an **MBA** from Atlanta College of Liberal Arts and Sciences.",
+    "As former Vice President of the Law Students' Union and former Legal Affairs Commissioner of the KUC SRC, I spearheaded initiatives that enhanced educational resources for students. I currently serve as **President of TEIN (Tertiary Education Institutional Network of NDC)** at Kings University College pending a successor election. My commitment to service extends to the **Adom Community League**, where I serve as President, and to regional student advocacy as **Chairman of the University Student Chamber West African Committee**.",
+    "Honoured as a **Global Goals Action Ambassador** by the UN Human Settlement Program, I leverage my platform for sustainable development and youth empowerment across Africa."
+  ],
+  "facts": [
+    { "num": "10+", "label": "Years Experience" },
+    { "num": "20+", "label": "Countries Represented" },
+    { "num": "500+", "label": "Student Leaders Convened" },
+    { "num": "15+", "label": "Partner Organisations" }
+  ]
+}

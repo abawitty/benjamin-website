@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media – Addo Benjamin Armah</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar" class="scrolled">
+    <div class="nav-container">
+      <a class="nav-logo" href="index.html"><img src="images/ben_logo.png" alt="ABA Logo" class="nav-logo-img" /></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <p class="section-label">In Pictures</p>
+      <h1>Media Gallery</h1>
+    </div>
+  </div>
+
+  <!-- GALLERY CONTENT -->
+  <section class="section">
+    <div class="container">
+
+      <div class="album-nav" id="albumNav"></div>
+
+      <div id="galleryRoot"></div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+    <button class="lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+    <div class="lb-inner">
+      <img id="lbImg" src="" alt="" />
+      <p id="lbCaption"></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="footer-name">Addo Benjamin Armah</p>
+      <p class="footer-tagline">Law · Leadership · Development</p>
+      <p class="footer-copy">&copy; 2026 Addo Benjamin Armah. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="render.js"></script>
+</body>
+</html>
