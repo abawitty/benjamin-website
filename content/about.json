@@ -1,5 +1,5 @@
 {
-  "photo": "images/profile_photo.jpg",
+  "photo": "/images/Pictures_for_website_4.jpg",
   "cardLabel": "Global Goals",
   "cardValue": "Action Ambassador",
   "cardSub": "UN Human Settlement Program",
@@ -10,9 +10,21 @@
     "Honoured as a **Global Goals Action Ambassador** by the UN Human Settlement Program, I leverage my platform for sustainable development and youth empowerment across Africa."
   ],
   "facts": [
-    { "num": "10+", "label": "Years Experience" },
-    { "num": "20+", "label": "Countries Represented" },
-    { "num": "500+", "label": "Student Leaders Convened" },
-    { "num": "15+", "label": "Partner Organisations" }
+    {
+      "num": "10+",
+      "label": "Years Experience"
+    },
+    {
+      "num": "20+",
+      "label": "Countries Represented"
+    },
+    {
+      "num": "500+",
+      "label": "Student Leaders Convened"
+    },
+    {
+      "num": "15+",
+      "label": "Partner Organisations"
+    }
   ]
 }
