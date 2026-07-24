@@ -1,19 +1,12 @@
 {
-  "tag": "Accra, Ghana",
-  "name": "Addo Benjamin Armah",
-  "titles": [
-    "LLM Candidate",
-    "SDG Ambassador",
-    "Community Leader",
-    "Entrepreneur",
-    "Philanthropist",
-    "Corporate Administrator"
+  "headingLines": ["Trained in law.", "Building toward the *bar*."],
+  "lede": "Legal and governance support across Accra's real estate, construction, and investment sectors — now preparing for the Pre-Bar Course at the Ghana School of Law under the new legal education regime.",
+  "tags": [
+    "Pre-Bar Candidate — Ghana School of Law",
+    "LLM Candidate — Int'l Law, Security & Diplomacy",
+    "Company Secretary, 4+ Entities",
+    "Google AI Professional Certified"
   ],
-  "badges": [
-    "⚖ LLB Graduate & LLM Candidate",
-    "🌍 UN SDG Ambassador",
-    "🤝 Philanthropist",
-    "💼 Entrepreneur"
-  ],
-  "heroBackgroundAlbum": "Trip to China"
+  "ctaPrimary": "Start a conversation",
+  "ctaSecondary": "Review my work"
 }

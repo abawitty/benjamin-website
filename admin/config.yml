@@ -16,128 +16,158 @@ collections:
         label: "Logo & Global Settings"
         name: "site"
         fields:
-          - { label: "Site Logo", name: "logo", widget: "image", hint: "Shown in the navigation bar on every page." }
+          - { label: "Site Logo", name: "logo", widget: "image", hint: "Shown in the navigation bar, hero, and Legal Tree panel." }
 
   - name: "home"
-    label: "Home Page"
+    label: "Homepage — Hero"
     files:
       - file: "content/home.json"
-        label: "Homepage Content"
+        label: "Hero Content"
         name: "home"
         fields:
-          - { label: "Location Tag", name: "tag", widget: "string" }
-          - { label: "Full Name", name: "name", widget: "string" }
-          - label: "Rotating Titles"
-            name: "titles"
+          - label: "Heading Lines"
+            name: "headingLines"
             widget: "list"
-            hint: "These type/erase in a loop under your name."
-            field: { label: "Title", name: "title", widget: "string" }
-          - label: "Badges"
-            name: "badges"
+            hint: "Each item is one line of the big heading. Wrap a word in *asterisks* to italicize/highlight it, e.g. 'Building toward the *bar*.'"
+            field: { label: "Line", name: "line", widget: "string" }
+          - { label: "Lede Paragraph", name: "lede", widget: "text" }
+          - label: "Tags"
+            name: "tags"
             widget: "list"
-            hint: "Short badges shown under the hero, e.g. '⚖ LLB Graduate & LLM Candidate'"
-            field: { label: "Badge Text", name: "text", widget: "string" }
-          - label: "Hero Background Album"
-            name: "heroBackgroundAlbum"
-            widget: "string"
-            hint: "Must exactly match a Media Gallery album title (see the Media Gallery section). Its photos rotate as the homepage background. Leave the album's photo list as-is or edit it there to change what shows here."
+            hint: "Short pill labels under the lede, e.g. 'Pre-Bar Candidate — Ghana School of Law'"
+            field: { label: "Tag", name: "tag", widget: "string" }
+          - { label: "Primary Button Text", name: "ctaPrimary", widget: "string" }
+          - { label: "Secondary Button Text", name: "ctaSecondary", widget: "string" }
 
   - name: "about"
-    label: "About Page"
+    label: "About Section"
     files:
       - file: "content/about.json"
         label: "About Content"
         name: "about"
         fields:
-          - { label: "Profile Photo", name: "photo", widget: "image" }
-          - { label: "Side Card - Label", name: "cardLabel", widget: "string" }
-          - { label: "Side Card - Value", name: "cardValue", widget: "string" }
-          - { label: "Side Card - Subtext", name: "cardSub", widget: "string" }
-          - { label: "Intro Sentence", name: "intro", widget: "text" }
-          - label: "Body Paragraphs"
+          - { label: "Portrait Photo", name: "photo", widget: "image", required: false, hint: "Leave empty to show the placeholder box instead." }
+          - label: "Paragraphs"
             name: "paragraphs"
             widget: "list"
-            hint: "Wrap words in **double asterisks** to make them bold."
+            hint: "Wrap words in **double asterisks** to make them bold. The first paragraph renders larger."
             field: { label: "Paragraph", name: "text", widget: "text" }
-          - label: "Quick Facts"
-            name: "facts"
+          - label: "Stats"
+            name: "stats"
             widget: "list"
             fields:
               - { label: "Number", name: "num", widget: "string" }
               - { label: "Label", name: "label", widget: "string" }
 
+  - name: "practice"
+    label: "Practice Areas"
+    files:
+      - file: "content/practice.json"
+        label: "Practice Areas"
+        name: "practice"
+        fields:
+          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Section Heading", name: "heading", widget: "string" }
+          - label: "Cards"
+            name: "cards"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Tag (e.g. '01 — Governance')", name: "tag", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
   - name: "experience"
     label: "Experience"
     files:
       - file: "content/experience.json"
-        label: "Experience Timeline"
+        label: "Experience"
         name: "experience"
         fields:
-          - label: "Timeline Items"
+          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Section Heading", name: "heading", widget: "string" }
+          - label: "Clusters"
+            name: "clusters"
+            widget: "list"
+            summary: "{{label}}"
+            hint: "A cluster groups related roles under one label, e.g. 'Corporate Governance & Administration'."
+            fields:
+              - { label: "Cluster Label", name: "label", widget: "string" }
+              - label: "Roles"
+                name: "items"
+                widget: "list"
+                summary: "{{org}} — {{role}}"
+                fields:
+                  - { label: "Organization", name: "org", widget: "string" }
+                  - { label: "Date Range", name: "date", widget: "string" }
+                  - { label: "Role", name: "role", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+
+  - name: "legaltree"
+    label: "Legal Tree (Featured Initiative)"
+    files:
+      - file: "content/legaltree.json"
+        label: "Legal Tree Section"
+        name: "legaltree"
+        fields:
+          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Section Heading", name: "heading", widget: "string" }
+          - label: "Paragraphs"
+            name: "paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "text", widget: "text" }
+          - { label: "Panel Heading", name: "panelHeading", widget: "string" }
+          - { label: "Panel Text", name: "panelText", widget: "text" }
+          - { label: "Panel CTA Text", name: "ctaText", widget: "string" }
+
+  - name: "credentials"
+    label: "Credentials"
+    files:
+      - file: "content/credentials.json"
+        label: "Credentials Section"
+        name: "credentials"
+        fields:
+          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Section Heading", name: "heading", widget: "string" }
+          - label: "Items"
             name: "items"
             widget: "list"
-            summary: "{{title}} ({{date}})"
+            summary: "{{title}}"
             fields:
-              - { label: "Date Range", name: "date", widget: "string", hint: "e.g. '2022 – Present'" }
-              - { label: "Tag", name: "tag", widget: "string", hint: "Short category label, e.g. 'Legal'" }
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Organization", name: "org", widget: "string" }
+              - { label: "Date Range", name: "date", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
+              - { label: "Verify Link Text", name: "verifyLabel", widget: "string", required: false }
+              - { label: "Verify Link URL", name: "verifyUrl", widget: "string", required: false }
 
-  - name: "education"
-    label: "Education"
+  - name: "memberships"
+    label: "Memberships"
     files:
-      - file: "content/education.json"
-        label: "Education Entries"
-        name: "education"
+      - file: "content/memberships.json"
+        label: "Professional Memberships"
+        name: "memberships"
         fields:
-          - label: "Entries"
-            name: "items"
-            widget: "list"
-            summary: "{{title}} — {{institution}}"
-            fields:
-              - { label: "Highlight this entry", name: "highlight", widget: "boolean", default: false }
-              - { label: "Icon (single emoji)", name: "icon", widget: "string" }
-              - { label: "Year / Date Range", name: "year", widget: "string" }
-              - { label: "Degree / Title", name: "title", widget: "string" }
-              - { label: "Field of Study", name: "field", widget: "string" }
-              - { label: "Institution", name: "institution", widget: "string" }
-
-  - name: "skills"
-    label: "Skills, Awards & Memberships"
-    files:
-      - file: "content/skills.json"
-        label: "Skills Content"
-        name: "skills"
-        fields:
-          - label: "Skills"
-            name: "skills"
-            widget: "list"
-            summary: "{{title}}"
-            fields:
-              - { label: "Icon (single emoji)", name: "icon", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "desc", widget: "text" }
-          - label: "Languages"
-            name: "languages"
-            widget: "list"
-            field: { label: "Language", name: "lang", widget: "string" }
-          - label: "Awards"
-            name: "awards"
-            widget: "list"
-            summary: "{{title}}"
-            fields:
-              - { label: "Icon (single emoji)", name: "icon", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Subtitle", name: "sub", widget: "string" }
           - label: "Memberships"
             name: "memberships"
             widget: "list"
             summary: "{{name}}"
-            hint: "Also shown on the Contact page."
+            hint: "Shown on the Contact page."
             fields:
               - { label: "Organization Name", name: "name", widget: "string" }
               - { label: "Years", name: "years", widget: "string" }
+
+  - name: "footer"
+    label: "Homepage — Closing/Contact Section"
+    files:
+      - file: "content/footer.json"
+        label: "Footer Content"
+        name: "footer"
+        fields:
+          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Section Heading", name: "heading", widget: "string" }
+          - { label: "'Support Legal Tree' Link Text", name: "legalTreeLinkText", widget: "string" }
+          - { label: "Copyright Line", name: "copyright", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
 
   - name: "contact"
     label: "Contact Info"

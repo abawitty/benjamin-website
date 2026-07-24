@@ -1,0 +1,9 @@
+{
+  "eyebrow": "Practice Areas",
+  "heading": "Where I add the most value",
+  "cards": [
+    { "tag": "01 — Governance", "title": "Corporate Compliance & Company Secretarial", "description": "Board communications, statutory filings, meeting minutes, and Registrar General coordination for construction, real estate, and investment entities." },
+    { "tag": "02 — Advisory", "title": "Legal & Constitutional Affairs", "description": "Legal advisory drafting, institutional documents, MoUs, and representation before disciplinary and judicial bodies." },
+    { "tag": "03 — Emerging", "title": "AI & Legal-Tech Consulting", "description": "Applying prompt engineering and AI research tools to legal research, document drafting, and organisational workflows." }
+  ]
+}

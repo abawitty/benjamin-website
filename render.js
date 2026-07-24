@@ -1,7 +1,7 @@
 // ===== CMS CONTENT RENDERING =====
 // Fetches content/*.json and populates each page. Runs before script.js's
-// per-page logic (typed text, gallery filters, scroll-in animation), which
-// call back into window.applyScrollIn() / window.startTypedText() below
+// per-page logic (nav toggle, gallery filters, scroll-in animation), which
+// call back into window.applyScrollIn() / window.initGalleryLightbox() below
 // once their DOM is in place.
 
 function escapeHtml(str) {
@@ -15,6 +15,11 @@ function escapeHtml(str) {
 // Supports **bold** markdown syntax only; everything else is escaped.
 function mdBold(str) {
   return escapeHtml(str).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+}
+
+// Supports *emphasis* markdown syntax only; everything else is escaped.
+function mdEm(str) {
+  return escapeHtml(str).replace(/\*(.+?)\*/g, "<em>$1</em>");
 }
 
 async function loadJSON(path) {
@@ -51,179 +56,135 @@ window.applyScrollIn = function () {
     });
 };
 
-// ---- SITE-WIDE (nav logo, every page) ----
+// ---- SITE-WIDE (logo, every page) ----
 async function renderSiteSettings() {
-  const logoEl = document.getElementById("navLogo");
-  if (!logoEl) return;
+  const targets = ["navLogo", "heroSeal", "ltSeal"]
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+  if (!targets.length) return;
   const data = await loadJSON("content/site.json");
-  if (data.logo) logoEl.src = data.logo;
-}
-
-// Cycles the hero background through a set of photos with a crossfade.
-function startHeroSlideshow(images) {
-  const container = document.getElementById("heroBg");
-  if (!container || !images.length) return;
-  container.innerHTML = images
-    .map(
-      (src, i) =>
-        `<div class="hero-bg-slide${i === 0 ? " active" : ""}" style="background-image:url('${escapeHtml(src)}')"></div>`
-    )
-    .join("");
-  if (images.length < 2) return;
-  const slides = container.querySelectorAll(".hero-bg-slide");
-  let idx = 0;
-  setInterval(() => {
-    slides[idx].classList.remove("active");
-    idx = (idx + 1) % slides.length;
-    slides[idx].classList.add("active");
-  }, 5000);
+  if (data.logo) targets.forEach((el) => (el.src = data.logo));
 }
 
 // ---- HOME (index.html) ----
 async function renderHome() {
-  const root = document.getElementById("heroTag");
-  if (!root) return;
-  const [data, media] = await Promise.all([
+  const heading = document.getElementById("heroHeading");
+  if (!heading) return;
+
+  const [home, about, practice, experience, legaltree, credentials, footer, contact] = await Promise.all([
     loadJSON("content/home.json"),
-    loadJSON("content/media.json"),
+    loadJSON("content/about.json"),
+    loadJSON("content/practice.json"),
+    loadJSON("content/experience.json"),
+    loadJSON("content/legaltree.json"),
+    loadJSON("content/credentials.json"),
+    loadJSON("content/footer.json"),
+    loadJSON("content/contact.json"),
   ]);
-  document.getElementById("heroTag").textContent = data.tag;
-  document.getElementById("heroName").textContent = data.name;
-  document.getElementById("heroBadges").innerHTML = data.badges
-    .map((b) => `<span class="badge">${escapeHtml(b)}</span>`)
+
+  // Hero
+  heading.innerHTML = home.headingLines.map((line) => mdEm(line)).join("<br>");
+  document.getElementById("heroLede").textContent = home.lede;
+  document.getElementById("heroTags").innerHTML = home.tags
+    .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
     .join("");
-  if (typeof window.startTypedText === "function") {
-    window.startTypedText(data.titles);
-  }
+  document.getElementById("heroCtaPrimary").textContent = home.ctaPrimary;
+  document.getElementById("heroCtaSecondary").textContent = home.ctaSecondary;
 
-  const albumName = (data.heroBackgroundAlbum || "").trim().toLowerCase();
-  const album = media.albums.find(
-    (a) => a.title.trim().toLowerCase() === albumName
-  );
-  if (album && album.photos.length) {
-    startHeroSlideshow(album.photos.map((p) => p.src));
+  // About
+  if (about.photo) {
+    document.getElementById("aboutPortrait").innerHTML =
+      `<img src="${escapeHtml(about.photo)}" alt="Addo Benjamin Armah" />`;
   }
-}
-
-// ---- ABOUT (about.html) ----
-async function renderAbout() {
-  const root = document.getElementById("aboutRoot");
-  if (!root) return;
-  const data = await loadJSON("content/about.json");
-  document.getElementById("aboutPhoto").src = data.photo;
-  document.getElementById("aboutCardLabel").textContent = data.cardLabel;
-  document.getElementById("aboutCardValue").textContent = data.cardValue;
-  document.getElementById("aboutCardSub").textContent = data.cardSub;
-  document.getElementById("aboutIntro").textContent = data.intro;
-  document.getElementById("aboutParagraphs").innerHTML = data.paragraphs
+  document.getElementById("aboutParagraphs").innerHTML = about.paragraphs
     .map((p) => `<p>${mdBold(p)}</p>`)
     .join("");
-  document.getElementById("aboutFacts").innerHTML = data.facts
+  document.getElementById("aboutStats").innerHTML = about.stats
     .map(
-      (f) =>
-        `<div class="fact"><span class="fact-num">${escapeHtml(f.num)}</span><span class="fact-label">${escapeHtml(f.label)}</span></div>`
+      (s) =>
+        `<div class="stat"><b>${escapeHtml(s.num)}</b><span>${escapeHtml(s.label)}</span></div>`
     )
     .join("");
-  window.applyScrollIn();
-}
 
-// ---- EXPERIENCE (experience.html) ----
-async function renderExperience() {
-  const root = document.getElementById("timelineRoot");
-  if (!root) return;
-  const data = await loadJSON("content/experience.json");
-  root.innerHTML = data.items
+  // Practice
+  document.getElementById("practiceEyebrow").textContent = practice.eyebrow;
+  document.getElementById("practiceHeading").textContent = practice.heading;
+  document.getElementById("practiceCards").innerHTML = practice.cards
     .map(
-      (it) => `
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-date">${escapeHtml(it.date)}</div>
-          <div class="tl-card">
-            <span class="tl-tag">${escapeHtml(it.tag)}</span>
-            <h3>${escapeHtml(it.title)}</h3>
-            <p class="tl-org">${escapeHtml(it.org)}</p>
-            <p>${escapeHtml(it.description)}</p>
-          </div>
+      (c) => `
+        <div class="card">
+          <span class="eyebrow">${escapeHtml(c.tag)}</span>
+          <h3>${escapeHtml(c.title)}</h3>
+          <p>${escapeHtml(c.description)}</p>
         </div>`
     )
     .join("");
-  window.applyScrollIn();
-}
 
-// ---- EDUCATION (education.html) ----
-async function renderEducation() {
-  const root = document.getElementById("eduRoot");
-  if (!root) return;
-  const data = await loadJSON("content/education.json");
-  root.innerHTML = data.items
+  // Experience
+  document.getElementById("experienceEyebrow").textContent = experience.eyebrow;
+  document.getElementById("experienceHeading").textContent = experience.heading;
+  document.getElementById("experienceClusters").innerHTML = experience.clusters
     .map(
-      (it) => `
-        <div class="edu-card${it.highlight ? " edu-card-highlight" : ""}">
-          <div class="edu-icon">${escapeHtml(it.icon)}</div>
-          <div>
-            <p class="edu-year">${escapeHtml(it.year)}</p>
-            <h3>${escapeHtml(it.title)}</h3>
-            <p class="edu-field">${escapeHtml(it.field)}</p>
-            <p class="edu-inst">${escapeHtml(it.institution)}</p>
-          </div>
+      (cluster) => `
+        <div class="exp-cluster">
+          <span class="eyebrow">${escapeHtml(cluster.label)}</span>
+          ${cluster.items
+            .map(
+              (it) => `
+              <div class="exp-row">
+                <div><div class="exp-org">${escapeHtml(it.org)}</div><div class="exp-date">${escapeHtml(it.date)}</div></div>
+                <div><div class="exp-role">${escapeHtml(it.role)}</div><div class="exp-desc">${escapeHtml(it.description)}</div></div>
+              </div>`
+            )
+            .join("")}
         </div>`
     )
     .join("");
-  window.applyScrollIn();
-}
 
-// ---- SKILLS (skills.html) ----
-async function renderSkills() {
-  const root = document.getElementById("skillsRoot");
-  if (!root) return;
-  const data = await loadJSON("content/skills.json");
-  document.getElementById("skillsGrid").innerHTML = data.skills
+  // Legal Tree
+  document.getElementById("ltEyebrow").textContent = legaltree.eyebrow;
+  document.getElementById("ltHeading").textContent = legaltree.heading;
+  document.getElementById("ltParagraphs").innerHTML = legaltree.paragraphs
+    .map((p) => `<p>${escapeHtml(p)}</p>`)
+    .join("");
+  document.getElementById("ltPanelHeading").textContent = legaltree.panelHeading;
+  document.getElementById("ltPanelText").textContent = legaltree.panelText;
+  document.getElementById("ltCta").textContent = legaltree.ctaText;
+
+  // Credentials
+  document.getElementById("credEyebrow").textContent = credentials.eyebrow;
+  document.getElementById("credHeading").textContent = credentials.heading;
+  document.getElementById("credGrid").innerHTML = credentials.items
     .map(
-      (s) => `
-        <div class="skill-card">
-          <div class="skill-icon">${escapeHtml(s.icon)}</div>
-          <h3>${escapeHtml(s.title)}</h3>
-          <p>${escapeHtml(s.desc)}</p>
+      (c) => `
+        <div class="cred">
+          <div class="cred-top"><h4>${escapeHtml(c.title)}</h4><span class="cred-date">${escapeHtml(c.date)}</span></div>
+          <p>${escapeHtml(c.description)}</p>
+          ${c.verifyUrl ? `<a href="${escapeHtml(c.verifyUrl)}" target="_blank" rel="noopener">${escapeHtml(c.verifyLabel || "Verify credential →")}</a>` : ""}
         </div>`
     )
     .join("");
-  document.getElementById("langList").innerHTML = data.languages
-    .map((l) => `<span class="lang-badge">${escapeHtml(l)}</span>`)
-    .join("");
-  document.getElementById("awardsGrid").innerHTML = data.awards
-    .map(
-      (a) => `
-        <div class="award-item">
-          <div class="award-icon">${escapeHtml(a.icon || "🏅")}</div>
-          <div>
-            <p class="award-title">${escapeHtml(a.title)}</p>
-            <p class="award-sub">${escapeHtml(a.sub)}</p>
-          </div>
-        </div>`
-    )
-    .join("");
-  document.getElementById("membershipsGrid").innerHTML = data.memberships
-    .map(
-      (m) => `
-        <div class="membership-item">
-          <span class="membership-dot"></span>
-          <div>
-            <p class="membership-name">${escapeHtml(m.name)}</p>
-            <p class="membership-year">${escapeHtml(m.years)}</p>
-          </div>
-        </div>`
-    )
-    .join("");
-  window.applyScrollIn();
+
+  // Footer / contact teaser
+  document.getElementById("footerEyebrow").textContent = footer.eyebrow;
+  document.getElementById("footerHeading").textContent = footer.heading;
+  document.getElementById("contactLinks").innerHTML = `
+    <a href="mailto:${escapeHtml(contact.email)}">${escapeHtml(contact.email)}</a>
+    <a href="tel:${escapeHtml(contact.phone.replace(/\s+/g, ""))}">${escapeHtml(contact.phone)}</a>
+    <a href="${escapeHtml(contact.linkedin)}" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a href="contact.html">Full contact form →</a>
+    <a href="#legaltree">${escapeHtml(footer.legalTreeLinkText)}</a>`;
+  document.getElementById("footerCopyright").textContent = footer.copyright;
+  document.getElementById("footerTagline").textContent = footer.tagline;
 }
 
 // ---- CONTACT (contact.html) ----
 async function renderContact() {
   const root = document.getElementById("contactRoot");
   if (!root) return;
-  const [contact, skills] = await Promise.all([
+  const [contact, memberships] = await Promise.all([
     loadJSON("content/contact.json"),
-    loadJSON("content/skills.json"),
+    loadJSON("content/memberships.json"),
   ]);
   document.getElementById("contactIntro").textContent = contact.intro;
   document.getElementById("contactItems").innerHTML = `
@@ -243,7 +204,7 @@ async function renderContact() {
       <span class="contact-icon">🔗</span>
       <div><p class="contact-label">LinkedIn</p><p class="contact-value">${escapeHtml(contact.linkedin.replace(/^https?:\/\/(www\.)?/, ""))}</p></div>
     </a>`;
-  document.getElementById("contactMemberships").innerHTML = skills.memberships
+  document.getElementById("contactMemberships").innerHTML = memberships.memberships
     .map(
       (m) =>
         `<li>${escapeHtml(m.name)} <span>${escapeHtml(m.years)}</span></li>`
@@ -320,9 +281,5 @@ async function renderMedia() {
 
 renderSiteSettings();
 renderHome();
-renderAbout();
-renderExperience();
-renderEducation();
-renderSkills();
 renderContact();
 renderMedia();

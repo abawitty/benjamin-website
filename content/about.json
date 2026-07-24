@@ -1,30 +1,13 @@
 {
   "photo": "/images/img_0567.png",
-  "cardLabel": "Global Goals",
-  "cardValue": "Action Ambassador",
-  "cardSub": "UN Human Settlement Program",
-  "intro": "I am a driven professional combining legal expertise, strategic leadership, and a deep commitment to public service to create meaningful impact across Ghana and beyond.",
   "paragraphs": [
-    "A proud graduate of **Kings University College (LLB, May 2026)**, I am now pursuing an **LLM in International Law, Security & Diplomacy** at the University of Gold Coast. I believe in the power of interdisciplinary knowledge to solve complex challenges. My academic journey is complemented by an **MBA** from Atlanta College of Liberal Arts and Sciences.",
-    "As former Vice President of the Law Students' Union and former Legal Affairs Commissioner of the KUC SRC, I spearheaded initiatives that enhanced educational resources for students. I currently serve as **President of TEIN (Tertiary Education Institutional Network of NDC)** at Kings University College pending a successor election. My commitment to service extends to the **Adom Community League**, where I serve as President, and to regional student advocacy as **Chairman of the University Student Chamber West African Committee**.",
-    "Honoured as a **Global Goals Action Ambassador** by the UN Human Settlement Program, I leverage my platform for sustainable development and youth empowerment across Africa."
+    "I work at the intersection of legal advisory, corporate governance, and — increasingly — applied AI.",
+    "Since 2021 I've held company secretary and administrative roles across a portfolio of real estate, construction, and investment entities in Accra, drafting governing documents, coordinating statutory filings, and advising boards on compliance with Ghana's corporate and land law regimes. In parallel, I serve as Chief Legal Counsel to the Kings University College Student Representative Council, representing student government before disciplinary and judicial bodies.",
+    "I'm not yet a qualified lawyer. I've gained admission to the Pre-Bar Course at the Ghana School of Law, the transitional step into Law Practice Training under Ghana's new legal education regime — and this month joined MIB Consults as a part-time Junior Legal Advisor. Alongside that, I'm reading for an LLM in International Law, Security & Diplomacy at the University of Gold Coast and have completed Google's AI Professional and AI Essentials certificates, which I'm now applying to legal-tech consulting and AI-assisted research."
   ],
-  "facts": [
-    {
-      "num": "10+",
-      "label": "Years Experience"
-    },
-    {
-      "num": "5+",
-      "label": "Countries Represented"
-    },
-    {
-      "num": "500+",
-      "label": "Student Leaders Convened"
-    },
-    {
-      "num": "15+",
-      "label": "Partner Organisations"
-    }
+  "stats": [
+    { "num": "5+", "label": "Yrs in corporate governance" },
+    { "num": "4", "label": "Boards & secretariats served" },
+    { "num": "15+", "label": "Community partnerships led" }
   ]
 }
