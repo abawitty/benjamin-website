@@ -220,10 +220,17 @@ ul { list-style: none; }
 .hero {
   min-height: 100vh; display: flex; align-items: center;
   position: relative; overflow: hidden;
-  background: url('images/Working_as_Personal_Assistant__2.jpg') center/cover no-repeat;
+  background: #0a0a0a;
 }
-.hero-overlay {
+.hero-bg { position: absolute; inset: 0; z-index: 0; }
+.hero-bg-slide {
   position: absolute; inset: 0;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  opacity: 0; transition: opacity 1.8s ease;
+}
+.hero-bg-slide.active { opacity: 1; }
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(135deg, rgba(10,10,10,0.94) 0%, rgba(12,12,12,0.78) 60%, rgba(39,168,68,0.15) 100%);
 }
 .hero-content {

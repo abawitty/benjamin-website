@@ -59,11 +59,34 @@ async function renderSiteSettings() {
   if (data.logo) logoEl.src = data.logo;
 }
 
+// Cycles the hero background through a set of photos with a crossfade.
+function startHeroSlideshow(images) {
+  const container = document.getElementById("heroBg");
+  if (!container || !images.length) return;
+  container.innerHTML = images
+    .map(
+      (src, i) =>
+        `<div class="hero-bg-slide${i === 0 ? " active" : ""}" style="background-image:url('${escapeHtml(src)}')"></div>`
+    )
+    .join("");
+  if (images.length < 2) return;
+  const slides = container.querySelectorAll(".hero-bg-slide");
+  let idx = 0;
+  setInterval(() => {
+    slides[idx].classList.remove("active");
+    idx = (idx + 1) % slides.length;
+    slides[idx].classList.add("active");
+  }, 5000);
+}
+
 // ---- HOME (index.html) ----
 async function renderHome() {
   const root = document.getElementById("heroTag");
   if (!root) return;
-  const data = await loadJSON("content/home.json");
+  const [data, media] = await Promise.all([
+    loadJSON("content/home.json"),
+    loadJSON("content/media.json"),
+  ]);
   document.getElementById("heroTag").textContent = data.tag;
   document.getElementById("heroName").textContent = data.name;
   document.getElementById("heroBadges").innerHTML = data.badges
@@ -71,6 +94,14 @@ async function renderHome() {
     .join("");
   if (typeof window.startTypedText === "function") {
     window.startTypedText(data.titles);
+  }
+
+  const albumName = (data.heroBackgroundAlbum || "").trim().toLowerCase();
+  const album = media.albums.find(
+    (a) => a.title.trim().toLowerCase() === albumName
+  );
+  if (album && album.photos.length) {
+    startHeroSlideshow(album.photos.map((p) => p.src));
   }
 }
 

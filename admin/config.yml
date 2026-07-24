@@ -37,6 +37,10 @@ collections:
             widget: "list"
             hint: "Short badges shown under the hero, e.g. '⚖ LLB Graduate & LLM Candidate'"
             field: { label: "Badge Text", name: "text", widget: "string" }
+          - label: "Hero Background Album"
+            name: "heroBackgroundAlbum"
+            widget: "string"
+            hint: "Must exactly match a Media Gallery album title (see the Media Gallery section). Its photos rotate as the homepage background. Leave the album's photo list as-is or edit it there to change what shows here."
 
   - name: "about"
     label: "About Page"
