@@ -443,7 +443,7 @@ ul { list-style: none; }
 
 /* ===== CONTACT ===== */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-.contact-intro { font-size: 1.05rem; color: var(--gray); margin-bottom: 36px; line-height: 1.7; }
+.contact-intro { font-size: 1.05rem; color: var(--gray); margin-bottom: 36px; line-height: 1.7; text-align: justify; hyphens: auto; }
 
 .contact-items { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
 .contact-item {
