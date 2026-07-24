@@ -9,6 +9,15 @@ site_url: https://benjaaddo.netlify.app
 display_url: https://benjaaddo.netlify.app
 
 collections:
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - file: "content/site.json"
+        label: "Logo & Global Settings"
+        name: "site"
+        fields:
+          - { label: "Site Logo", name: "logo", widget: "image", hint: "Shown in the navigation bar on every page." }
+
   - name: "home"
     label: "Home Page"
     files:

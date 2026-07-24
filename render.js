@@ -51,6 +51,14 @@ window.applyScrollIn = function () {
     });
 };
 
+// ---- SITE-WIDE (nav logo, every page) ----
+async function renderSiteSettings() {
+  const logoEl = document.getElementById("navLogo");
+  if (!logoEl) return;
+  const data = await loadJSON("content/site.json");
+  if (data.logo) logoEl.src = data.logo;
+}
+
 // ---- HOME (index.html) ----
 async function renderHome() {
   const root = document.getElementById("heroTag");
@@ -279,6 +287,7 @@ async function renderMedia() {
   window.applyScrollIn();
 }
 
+renderSiteSettings();
 renderHome();
 renderAbout();
 renderExperience();
