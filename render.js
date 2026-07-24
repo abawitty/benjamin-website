@@ -66,150 +66,137 @@ async function renderSiteSettings() {
   if (data.logo) targets.forEach((el) => (el.src = data.logo));
 }
 
-// ---- HOME (index.html) ----
-async function renderHome() {
-  const heading = document.getElementById("heroHeading");
-  if (!heading) return;
-
-  const [home, about, practice, experience, legaltree, credentials, footer, contact] = await Promise.all([
-    loadJSON("content/home.json"),
-    loadJSON("content/about.json"),
-    loadJSON("content/practice.json"),
-    loadJSON("content/experience.json"),
-    loadJSON("content/legaltree.json"),
-    loadJSON("content/credentials.json"),
-    loadJSON("content/footer.json"),
-    loadJSON("content/contact.json"),
-  ]);
-
-  // Hero
-  heading.innerHTML = home.headingLines.map((line) => mdEm(line)).join("<br>");
-  document.getElementById("heroLede").textContent = home.lede;
-  document.getElementById("heroTags").innerHTML = home.tags
-    .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
-    .join("");
-  document.getElementById("heroCtaPrimary").textContent = home.ctaPrimary;
-  document.getElementById("heroCtaSecondary").textContent = home.ctaSecondary;
-
-  // About
-  if (about.photo) {
-    document.getElementById("aboutPortrait").innerHTML =
-      `<img src="${escapeHtml(about.photo)}" alt="Addo Benjamin Armah" />`;
-  }
-  document.getElementById("aboutParagraphs").innerHTML = about.paragraphs
-    .map((p) => `<p>${mdBold(p)}</p>`)
-    .join("");
-  document.getElementById("aboutStats").innerHTML = about.stats
+// ---- HERO BACKGROUND SLIDESHOW (index.html + about/experience/education/skills) ----
+function startHeroSlideshow(container, images) {
+  if (!container || !images || !images.length) return;
+  container.innerHTML = images
     .map(
-      (s) =>
-        `<div class="stat"><b>${escapeHtml(s.num)}</b><span>${escapeHtml(s.label)}</span></div>`
+      (src, i) =>
+        `<div class="hero-bg-slide${i === 0 ? " active" : ""}" style="background-image:url('${escapeHtml(src)}')"></div>`
     )
     .join("");
-
-  // Practice
-  document.getElementById("practiceEyebrow").textContent = practice.eyebrow;
-  document.getElementById("practiceHeading").textContent = practice.heading;
-  document.getElementById("practiceCards").innerHTML = practice.cards
-    .map(
-      (c) => `
-        <div class="card">
-          <span class="eyebrow">${escapeHtml(c.tag)}</span>
-          <h3>${escapeHtml(c.title)}</h3>
-          <p>${escapeHtml(c.description)}</p>
-        </div>`
-    )
-    .join("");
-
-  // Experience
-  document.getElementById("experienceEyebrow").textContent = experience.eyebrow;
-  document.getElementById("experienceHeading").textContent = experience.heading;
-  document.getElementById("experienceClusters").innerHTML = experience.clusters
-    .map(
-      (cluster) => `
-        <div class="exp-cluster">
-          <span class="eyebrow">${escapeHtml(cluster.label)}</span>
-          ${cluster.items
-            .map(
-              (it) => `
-              <div class="exp-row">
-                <div><div class="exp-org">${escapeHtml(it.org)}</div><div class="exp-date">${escapeHtml(it.date)}</div></div>
-                <div><div class="exp-role">${escapeHtml(it.role)}</div><div class="exp-desc">${escapeHtml(it.description)}</div></div>
-              </div>`
-            )
-            .join("")}
-        </div>`
-    )
-    .join("");
-
-  // Legal Tree
-  document.getElementById("ltEyebrow").textContent = legaltree.eyebrow;
-  document.getElementById("ltHeading").textContent = legaltree.heading;
-  document.getElementById("ltParagraphs").innerHTML = legaltree.paragraphs
-    .map((p) => `<p>${escapeHtml(p)}</p>`)
-    .join("");
-  document.getElementById("ltPanelHeading").textContent = legaltree.panelHeading;
-  document.getElementById("ltPanelText").textContent = legaltree.panelText;
-  document.getElementById("ltCta").textContent = legaltree.ctaText;
-
-  // Credentials
-  document.getElementById("credEyebrow").textContent = credentials.eyebrow;
-  document.getElementById("credHeading").textContent = credentials.heading;
-  document.getElementById("credGrid").innerHTML = credentials.items
-    .map(
-      (c) => `
-        <div class="cred">
-          <div class="cred-top"><h4>${escapeHtml(c.title)}</h4><span class="cred-date">${escapeHtml(c.date)}</span></div>
-          <p>${escapeHtml(c.description)}</p>
-          ${c.verifyUrl ? `<a href="${escapeHtml(c.verifyUrl)}" target="_blank" rel="noopener">${escapeHtml(c.verifyLabel || "Verify credential →")}</a>` : ""}
-        </div>`
-    )
-    .join("");
-
-  // Footer / contact teaser
-  document.getElementById("footerEyebrow").textContent = footer.eyebrow;
-  document.getElementById("footerHeading").textContent = footer.heading;
-  document.getElementById("contactLinks").innerHTML = `
-    <a href="mailto:${escapeHtml(contact.email)}">${escapeHtml(contact.email)}</a>
-    <a href="tel:${escapeHtml(contact.phone.replace(/\s+/g, ""))}">${escapeHtml(contact.phone)}</a>
-    <a href="${escapeHtml(contact.linkedin)}" target="_blank" rel="noopener">LinkedIn ↗</a>
-    <a href="contact.html">Full contact form →</a>
-    <a href="#legaltree">${escapeHtml(footer.legalTreeLinkText)}</a>`;
-  document.getElementById("footerCopyright").textContent = footer.copyright;
-  document.getElementById("footerTagline").textContent = footer.tagline;
+  if (images.length < 2) return;
+  const slides = container.querySelectorAll(".hero-bg-slide");
+  let index = 0;
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 5000);
 }
 
-// ---- CONTACT (contact.html) ----
-async function renderContact() {
-  const root = document.getElementById("contactRoot");
+async function renderHeroBackground() {
+  const container = document.getElementById("heroBg");
+  if (!container) return;
+  const data = await loadJSON("content/media.json");
+  const album = data.albums.find((a) => a.title === "Trip to China");
+  if (!album || !album.photos.length) return;
+  startHeroSlideshow(container, album.photos.map((p) => p.src));
+}
+
+// ---- ABOUT (about.html) ----
+async function renderAboutPage() {
+  const root = document.getElementById("aboutParagraphs");
   if (!root) return;
-  const [contact, memberships] = await Promise.all([
-    loadJSON("content/contact.json"),
-    loadJSON("content/memberships.json"),
-  ]);
-  document.getElementById("contactIntro").textContent = contact.intro;
-  document.getElementById("contactItems").innerHTML = `
-    <a href="mailto:${escapeHtml(contact.email)}" class="contact-item">
-      <span class="contact-icon">✉</span>
-      <div><p class="contact-label">Email</p><p class="contact-value">${escapeHtml(contact.email)}</p></div>
-    </a>
-    <a href="tel:${escapeHtml(contact.phone.replace(/\s+/g, ""))}" class="contact-item">
-      <span class="contact-icon">📞</span>
-      <div><p class="contact-label">Phone</p><p class="contact-value">${escapeHtml(contact.phone)}</p></div>
-    </a>
-    <div class="contact-item">
-      <span class="contact-icon">📍</span>
-      <div><p class="contact-label">Location</p><p class="contact-value">${escapeHtml(contact.location)}</p></div>
-    </div>
-    <a href="${escapeHtml(contact.linkedin)}" target="_blank" rel="noopener" class="contact-item">
-      <span class="contact-icon">🔗</span>
-      <div><p class="contact-label">LinkedIn</p><p class="contact-value">${escapeHtml(contact.linkedin.replace(/^https?:\/\/(www\.)?/, ""))}</p></div>
-    </a>`;
-  document.getElementById("contactMemberships").innerHTML = memberships.memberships
+  const data = await loadJSON("content/about.json");
+
+  document.getElementById("heroEyebrow").textContent = data.hero.eyebrow;
+  document.getElementById("heroHeading").textContent = data.hero.heading;
+  document.getElementById("heroLede").textContent = data.hero.lede;
+
+  root.innerHTML = data.paragraphs.map((p) => `<p>${mdBold(p)}</p>`).join("");
+
+  document.getElementById("principlesEyebrow").textContent = data.principles.eyebrow;
+  document.getElementById("principlesHeading").textContent = data.principles.heading;
+  document.getElementById("principlesGrid").innerHTML = data.principles.cards
+    .map((c) => `<div class="skill-card"><h3>${escapeHtml(c.title)}</h3><p>${escapeHtml(c.text)}</p></div>`)
+    .join("");
+
+  window.applyScrollIn();
+}
+
+// ---- EXPERIENCE (experience.html) ----
+function entryHtml(entry) {
+  return `
+    <div class="entry">
+      <div class="entry-meta"><div class="org">${escapeHtml(entry.org)}</div><div class="date">${escapeHtml(entry.date)}</div></div>
+      <div class="entry-body"><h3>${escapeHtml(entry.title)}</h3>${entry.paragraphs.map((p) => `<p>${mdBold(p)}</p>`).join("")}</div>
+    </div>`;
+}
+
+async function renderExperiencePage() {
+  const root = document.getElementById("experienceClusters");
+  if (!root) return;
+  const data = await loadJSON("content/experience.json");
+
+  document.getElementById("heroEyebrow").textContent = data.hero.eyebrow;
+  document.getElementById("heroHeading").textContent = data.hero.heading;
+  document.getElementById("heroLede").textContent = data.hero.lede;
+
+  root.innerHTML = data.clusters
     .map(
-      (m) =>
-        `<li>${escapeHtml(m.name)} <span>${escapeHtml(m.years)}</span></li>`
+      (cluster, i) => `
+        <div class="entry-cluster-group"${i > 0 ? ' style="margin-top:60px;"' : ""}>
+          <span class="eyebrow">${escapeHtml(cluster.label)}</span>
+          <div class="entry-cluster">${cluster.entries.map(entryHtml).join("")}</div>
+        </div>`
     )
     .join("");
+
+  window.applyScrollIn();
+}
+
+// ---- EDUCATION (education.html) ----
+async function renderEducationPage() {
+  const root = document.getElementById("educationEntries");
+  if (!root) return;
+  const data = await loadJSON("content/education.json");
+
+  document.getElementById("heroEyebrow").textContent = data.hero.eyebrow;
+  document.getElementById("heroHeading").textContent = data.hero.heading;
+  document.getElementById("heroLede").textContent = data.hero.lede;
+
+  root.innerHTML = data.entries.map(entryHtml).join("");
+
+  window.applyScrollIn();
+}
+
+// ---- SKILLS (skills.html) ----
+async function renderSkillsPage() {
+  const root = document.getElementById("competenciesGrid");
+  if (!root) return;
+  const [data, memberships] = await Promise.all([
+    loadJSON("content/skills.json"),
+    loadJSON("content/memberships.json"),
+  ]);
+
+  document.getElementById("heroEyebrow").textContent = data.hero.eyebrow;
+  document.getElementById("heroHeading").textContent = data.hero.heading;
+  document.getElementById("heroLede").textContent = data.hero.lede;
+
+  const cardsHtml = (cards) =>
+    cards
+      .map(
+        (c) =>
+          `<div class="skill-card"><h3>${escapeHtml(c.title)}</h3>${c.paragraphs.map((p) => `<p>${mdBold(p)}</p>`).join("")}</div>`
+      )
+      .join("");
+
+  document.getElementById("competenciesEyebrow").textContent = data.competencies.eyebrow;
+  root.innerHTML = cardsHtml(data.competencies.cards);
+
+  document.getElementById("aiLiteracyEyebrow").textContent = data.aiLiteracy.eyebrow;
+  document.getElementById("aiLiteracyGrid").innerHTML = cardsHtml(data.aiLiteracy.cards);
+
+  document.getElementById("awardsEyebrow").textContent = data.awards.eyebrow;
+  document.getElementById("awardsGrid").innerHTML = cardsHtml(data.awards.cards);
+
+  document.getElementById("membershipsEyebrow").textContent = data.membershipsEyebrow;
+  document.getElementById("membershipsList").innerHTML = memberships.memberships
+    .map((m) => `<div class="member-row"><span>${escapeHtml(m.name)}</span><span>${escapeHtml(m.years)}</span></div>`)
+    .join("");
+
+  window.applyScrollIn();
 }
 
 // ---- MEDIA (media.html) ----
@@ -280,6 +267,9 @@ async function renderMedia() {
 }
 
 renderSiteSettings();
-renderHome();
-renderContact();
 renderMedia();
+renderHeroBackground();
+renderAboutPage();
+renderExperiencePage();
+renderEducationPage();
+renderSkillsPage();

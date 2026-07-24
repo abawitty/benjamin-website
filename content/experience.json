@@ -1,28 +1,154 @@
 {
-  "eyebrow": "Experience",
-  "heading": "Roles, grouped by what they built",
+  "hero": {
+    "eyebrow": "Experience",
+    "heading": "Career Journey",
+    "lede": "Legal advisory, governance, enterprise, and civic leadership, spanning student parliament to my own business."
+  },
   "clusters": [
     {
-      "label": "Corporate Governance & Administration",
-      "items": [
-        { "org": "Commanex Investments Ltd.", "date": "Jan 2021 — Present", "role": "Administrator & Company Secretary", "description": "Direct office operations, HR coordination, and budget tracking; draft institutional documents, housing proposals, and management reports; manage ground rent collections and CRM operations." },
-        { "org": "Jack & Hammer Builders Ltd.", "date": "Feb 2022 — Present", "role": "Company Secretary", "description": "Maintain governance standards for a residential and commercial construction company; coordinate statutory filings and liaise with auditors and regulators." },
-        { "org": "Epic Real Estate Ghana Ltd.", "date": "Apr 2022 — Present", "role": "Company Secretary & Administrator", "description": "Manage property portfolios and real estate transactions across Greater Accra in compliance with land law; implemented digital systems that improved operational efficiency by 40%." }
+      "label": "Legal & Student Governance",
+      "entries": [
+        {
+          "org": "Kings University College · SRC",
+          "date": "May 2025 to May 2026",
+          "title": "Legal Affairs Commissioner & Chief Legal Counsel",
+          "paragraphs": [
+            "Served as Chief Legal Counsel of the Students' Representative Council and Chairperson of the Legal Affairs Commission, the principal legal adviser to the SRC. Represented the Executive, Parliamentary, and Judicial Councils at hearings, provided legal defence to students before the Disciplinary Board, and advised the Legislative Council on constitutional and procedural matters.",
+            "Authored the first amendment to the SRC Constitution and the first Standing Orders of its Parliament, and founded the Votes and Proceedings, the Official Report, and the Summons, the documentary instruments that now give the Parliament a verifiable record. Personally financed campus-wide free Wi-Fi for its first year, issued the formal legal opinion on the FloodGates International MoU that identified seven protective amendments, and guided the SRC Electoral Commission through the first election conducted under the 2026 constitutional amendments, disposing of two petitions and a ruling on foreign materials found in ballot boxes."
+          ]
+        },
+        {
+          "org": "Kings University College · LSU",
+          "date": "May 2024 to May 2025",
+          "title": "Vice President, Law Students' Union",
+          "paragraphs": [
+            "Led the Law Students' Union's academic resourcing agenda, sole-sponsoring and developing both the LSU website and the Dr. Attakora Legal Tree, a digital hub of past questions, textbooks, law reports, and journals paired with an AI chatbot for quick doctrinal queries. Donated laptops, printers, and a mobile receipt printer to modernise the Union's administrative capacity.",
+            "Coached the LSU delegation to the Sarah F. Kpodo International Moot Court Competition organised by the African Law Students Association, leading Prestige Chamber to victory over Truth Chamber in the preliminaries. Served as a key sponsor of the LSU Dinner, an annual event that brings law students together for professional networking."
+          ]
+        },
+        {
+          "org": "Kings University College · LSU",
+          "date": "July 2023 to May 2024",
+          "title": "Clerk of the Judicial Committee",
+          "paragraphs": [
+            "Managed the documentation of disciplinary cases, appeals, and committee decisions for the Law Students' Union's judicial process, and coordinated hearing schedules, witness testimony, and the presentation of evidence in student disciplinary matters.",
+            "Prepared meeting minutes, legal briefs, and procedural documentation for committee review, and advised committee members on procedure, precedent, and university regulations. Resigned the position to contest for the Union's Vice Presidency."
+          ]
+        }
       ]
     },
     {
-      "label": "Legal Advisory & Student Governance",
-      "items": [
-        { "org": "MIB Consults", "date": "Jul 2026 — Present", "role": "Junior Legal Advisor (Part-time)", "description": "Provide legal advisory support while completing the transition into the Ghana School of Law Pre-Bar Course." },
-        { "org": "Kings University College — SRC", "date": "May 2025 — Present", "role": "Legal Affairs Commissioner & Chief Legal Counsel", "description": "Chair the Legal Affairs Commission; represent Executive, Parliamentary, and Judicial Councils at hearings; advise the Legislative Council on Standing Orders amendments." },
-        { "org": "Kings University College — LSU", "date": "May 2024 — May 2025", "role": "Vice President, Law Students' Union", "description": "Spearheaded the LSU website and Dr. Attakora Legal Tree; coached the delegation to the Sarah F. Kpodo International Moot Court Competition." }
+      "label": "Enterprise, Real Estate & Corporate Governance",
+      "entries": [
+        {
+          "org": "Lawbenpina Ventures",
+          "date": "August 2017 to Present",
+          "title": "Owner & General Manager",
+          "paragraphs": [
+            "Founded and run Lawbenpina Ventures, an Accra-based business spanning consulting services, investment facilitation, and strategic partnerships. What began as a general consulting venture has grown to include a dedicated import service: sourcing and bringing in goods from China, Turkey, and other overseas markets on behalf of individual and business clients across Ghana.",
+            "Handle the full order lifecycle, from a customer's product screenshot sent by WhatsApp through sourcing, negotiation, shipping, and delivery. The business has maintained a consistent growth trajectory since founding, built on responsiveness and follow-through on every order placed."
+          ]
+        },
+        {
+          "org": "Epic Real Estate Ghana Ltd.",
+          "date": "April 2022 to Present",
+          "title": "Company Secretary",
+          "paragraphs": [
+            "Manage property portfolios and oversee real estate transactions across Greater Accra, coordinating acquisitions, sales, and rental management in line with Ghana's real estate regulations and land laws. Supervise client services, documentation, and financial reporting for the company's residential and commercial holdings.",
+            "Implemented digital systems for property management that improved operational efficiency by roughly 40 percent, and lead tenant relations, maintenance coordination, and vendor management. Conduct market analysis and property valuations to inform investment and portfolio decisions."
+          ]
+        },
+        {
+          "org": "Jack & Hammer Builders Ltd.",
+          "date": "February 2022 to Present",
+          "title": "Secretary",
+          "paragraphs": [
+            "Ensure corporate compliance for a construction company specialising in residential and commercial projects, managing board communications, meeting minutes, and statutory filings with Ghana's Registrar General's Department.",
+            "Oversee corporate record-keeping, shareholder communications, and regulatory compliance, including tax filings and annual returns, coordinating with external auditors, legal counsel, and regulators to maintain the company's good standing."
+          ]
+        },
+        {
+          "org": "Haga, Armah & Associates Ltd.",
+          "date": "May 2022 to Present",
+          "title": "Board Member",
+          "paragraphs": [
+            "Provide strategic oversight and governance input for the firm's legal services practice, contributing to board-level decisions on direction and priorities.",
+            "Support business development and client relationship management alongside fellow board members, drawing on my legal and administrative background to inform the firm's growth strategy."
+          ]
+        },
+        {
+          "org": "Commanex Investment Ltd.",
+          "date": "July 2015 to Present",
+          "title": "Administrative Manager",
+          "paragraphs": [
+            "Manage office operations and workflow optimisation, supervise administrative staff, and develop the policies and procedures the office runs on. Coordinate document management for property listings, transactions, and client records, and administer budgets and expense tracking.",
+            "Oversee internal and external communications, vendor relationships, and technology solutions for administrative efficiency, and provide HR support including onboarding and training coordination. Handle crisis management and business continuity planning for the administrative function."
+          ]
+        }
       ]
     },
     {
-      "label": "Community & Policy",
-      "items": [
-        { "org": "Adom Community League", "date": "Aug 2022 — Present", "role": "President", "description": "Lead community development and advocacy programmes across Greater Accra; built partnerships with 15+ community organisations." },
-        { "org": "University Student Chamber — West Africa", "date": "Jul 2019 — Present", "role": "Chairman", "description": "Lead regional student advocacy across 20+ African countries; organise the annual West African Student Leadership Summit for 500+ leaders." }
+      "label": "Civic & Regional Leadership",
+      "entries": [
+        {
+          "org": "Adom Community League",
+          "date": "August 2022 to Present",
+          "title": "President",
+          "paragraphs": [
+            "Lead community development initiatives and advocacy programmes across Greater Accra, directing a team of volunteers and community leaders on projects focused on education, healthcare access, and economic empowerment.",
+            "Built strategic partnerships with more than fifteen community organisations, government agencies, and international NGOs, improving service delivery and resource allocation for underserved populations, while overseeing the League's governance and budget."
+          ]
+        },
+        {
+          "org": "University Student Chamber",
+          "date": "July 2019 to Present",
+          "title": "Chairman, West African Committee",
+          "paragraphs": [
+            "Lead regional student advocacy initiatives across West African universities, representing student interests in more than twenty African countries and coordinating inter-university collaboration and policy dialogue.",
+            "Organise the annual West African Student Leadership Summit, bringing together over 500 student leaders for capacity building and networking, and facilitate cross-border exchange programmes and academic partnerships throughout the region."
+          ]
+        },
+        {
+          "org": "University Student Chamber Ghana (UNISC)",
+          "date": "June 2018 to Present",
+          "title": "President",
+          "paragraphs": [
+            "Represent Ghanaian students in national and international forums, developing partnerships with educational institutions, government agencies, and international student organisations, and coordinating with Ghana's Ministry of Education on policy affecting higher education.",
+            "Lead national student advocacy campaigns on university funding, educational infrastructure, and student rights, and organise national student conferences, leadership training, and academic competitions, while serving as Ghana's representative to African and international student bodies."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Parliament & Policy",
+      "entries": [
+        {
+          "org": "Amasaman Constituency, Parliament House",
+          "date": "June 2013 to January 2021",
+          "title": "Personal & Research Assistant to the MP",
+          "paragraphs": [
+            "Conducted policy research and legislative analysis for a sitting Member of Parliament over a seven-year tenure, preparing briefing materials, position papers, and session documentation, and managing constituent relations and community outreach.",
+            "Played a role in the 2016 parliamentary seat victory, developing the results collation system deployed at both party headquarters and the Electoral Commission's collation centre. Assisted in drafting speeches, press releases, and official communications for the constituency office."
+          ]
+        },
+        {
+          "org": "University of Ghana Parliament House (UGPH)",
+          "date": "July 2016 to November 2019",
+          "title": "Member of Parliament",
+          "paragraphs": [
+            "Participated in parliamentary debates and legislative processes representing student constituency interests, contributing to policy discussions on university governance, student welfare, and academic excellence.",
+            "Drafted and debated motions on campus infrastructure, library resources, and student accommodation, and collaborated with fellow parliamentarians on budget reviews and reform initiatives."
+          ]
+        },
+        {
+          "org": "POSSA Parliament House, University of Ghana",
+          "date": "July 2016 to November 2019",
+          "title": "Member of Parliament",
+          "paragraphs": [
+            "Engaged in policy discussion and student advocacy within the Political Science Students Association's departmental governance structure, representing students' interests in curriculum matters, faculty relations, and resource allocation.",
+            "Participated in debates on course offerings, examinations, and assessment methods, and contributed to strategic planning for the department's academic programmes and international partnerships."
+          ]
+        }
       ]
     }
   ]

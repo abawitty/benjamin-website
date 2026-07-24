@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "eyebrow": "Skills",
+    "heading": "Capabilities, Awards & Memberships",
+    "lede": "Core legal and governance competencies, AI literacy, and the professional networks I have built over the years."
+  },
+  "competencies": {
+    "eyebrow": "Core Competencies",
+    "cards": [
+      { "title": "Law", "paragraphs": [
+        "General legal practice grounded in an LLB from Kings University College and an in-progress LLM in International Law, Security and Diplomacy, covering constitutional, corporate, civil, and international law. This foundation carried through hundreds of legal opinions issued as Legal Affairs Commissioner and now underpins my published SSRN research.",
+        "I favour written, reasoned opinions over informal advice, a discipline I built into every legal matter that crossed my desk in student government and continue to apply to business and client matters."
+      ]},
+      { "title": "Constitutional Law & Legal Advisory", "paragraphs": [
+        "Authored the first amendment to the Kings University College SRC Constitution and its first Standing Orders, and have advised executive, parliamentary, and judicial bodies on constitutional compliance, electoral law, and institutional design.",
+        "This advisory experience extends to real, contested matters: opinions on financial-transparency petitions, injunctive relief against a completed transition, and the legal threshold for irregularities in an election count."
+      ]},
+      { "title": "Corporate Compliance & Statutory Governance", "paragraphs": [
+        "Serve as company secretary or board member across real estate, construction, and legal services firms, managing statutory filings, board communications, and regulatory compliance with Ghana's Registrar General's Department.",
+        "This governance discipline also shapes how I run Lawbenpina Ventures, where every import order and business commitment is tracked and followed through in the same structured way."
+      ]}
+    ]
+  },
+  "aiLiteracy": {
+    "eyebrow": "AI Literacy",
+    "cards": [
+      { "title": "Google AI Professional & Essentials", "paragraphs": [
+        "Google-certified across both the AI Essentials and AI Professional tracks, covering responsible use of AI tools and how to apply them productively in legal and administrative work."
+      ]},
+      { "title": "Use AI Responsibly & Stay Ahead of the AI Curve", "paragraphs": [
+        "Completed certifications focused on the responsible, ethical use of AI tools and on staying current with fast-moving AI capabilities, relevant to legal-tech and AI-consulting engagements."
+      ]}
+    ]
+  },
+  "awards": {
+    "eyebrow": "Awards & Recognition",
+    "cards": [
+      { "title": "Global Goals Action Ambassador", "paragraphs": ["Youthnow International, official partner of the UN Human Settlements Programme, 2018. Recognised for leveraging youth platforms for sustainable development across Africa."] },
+      { "title": "International Global Ambassador", "paragraphs": ["International Global Ambassador Network, 2018, recognising cross-border advocacy and representation work."] },
+      { "title": "Most Prolific Writer", "paragraphs": ["St. John's Grammar Senior High School, 2015."] },
+      { "title": "2nd Best Student in Economics", "paragraphs": ["St. John's Grammar Senior High School, 2015."] }
+    ]
+  },
+  "membershipsEyebrow": "Professional Memberships"
+}

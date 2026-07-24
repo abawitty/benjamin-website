@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "eyebrow": "Education",
+    "heading": "Academic Background",
+    "lede": "Formal legal, political, and business education, from undergraduate study through to an LLM in progress."
+  },
+  "entries": [
+    {
+      "org": "University of Gold Coast",
+      "date": "Awarded April 2026",
+      "title": "Master of Laws (LLM), International Law, Security & Diplomacy",
+      "paragraphs": [
+        "Pursued advanced study in international law with a focus on security and diplomacy, examining how treaty law, transnational crime frameworks, and diplomatic practice intersect in an African and global context.",
+        "This programme directly informed my SSRN-published research on advance-fee fraud, which draws on the Palermo Convention, cybercrime instruments, and mutual legal assistance frameworks covered in the LLM curriculum."
+      ]
+    },
+    {
+      "org": "Kings University College",
+      "date": "September 2022 to May 2026",
+      "title": "Bachelor of Laws (LLB)",
+      "paragraphs": [
+        "Completed my foundational legal education, covering constitutional law, contract, tort, criminal law, and procedure, while serving concurrently in student governance roles including Clerk of the Judicial Committee, Vice President of the Law Students' Union, and Legal Affairs Commissioner of the SRC.",
+        "Graduated in May 2026, completing my legal training and clearing the way for the professional transition ahead: the Pre-Bar Course at the Ghana School of Law, which I begin on 1 September 2026."
+      ]
+    },
+    {
+      "org": "Atlanta College of Liberal Arts and Sciences",
+      "date": "November 2024 to October 2025",
+      "title": "Master of Business Administration (MBA)",
+      "paragraphs": [
+        "Studied business administration and management alongside my legal studies, building formal grounding in strategy, finance, and organisational leadership to complement legal training.",
+        "This dual legal and business foundation now underpins both my governance advisory work and the day-to-day running of Lawbenpina Ventures."
+      ]
+    },
+    {
+      "org": "University of Ghana",
+      "date": "Completed September 2015",
+      "title": "Bachelor of Arts (BA), Political Science",
+      "paragraphs": [
+        "Studied political science, building an academic foundation in governance, public policy, and political systems that has informed my later work in parliamentary research and student advocacy.",
+        "This early academic grounding shaped my long-standing interest in institutional design, which later carried into my work drafting the SRC's constitutional amendments and Standing Orders."
+      ]
+    },
+    {
+      "org": "University of London",
+      "date": "November 2021 to December 2021",
+      "title": "Certificate, English Common Law",
+      "paragraphs": [
+        "Completed a focused certificate in English common law, strengthening my comparative understanding of common law doctrine alongside Ghana's own legal system, which is itself rooted in the common law tradition.",
+        "This comparative grounding is reflected in my SSRN research, which situates Nigeria's advance-fee fraud framework within colonial-era common law codification and its subsequent domestic evolution."
+      ]
+    }
+  ]
+}

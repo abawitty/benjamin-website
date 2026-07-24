@@ -57,6 +57,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .pagehero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(185,143,61,0.06),transparent);pointer-events:none;}
 .pagehero .wrap{position:relative;}
 
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;}
+.hero-bg-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.8s ease;}
+.hero-bg-slide.active{opacity:1;}
+.hero-bg::after,.pagehero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,27,45,0.55),rgba(15,27,45,0.88));}
+
 /* -------- buttons -------- */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-size:14px;border:1px solid var(--line);transition:all .2s;}
 .btn-primary{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:600;}
@@ -173,6 +178,7 @@ section{padding:64px 0;border-top:1px solid var(--line);}
 
 <header class="hero">
   <div class="hero-bg-lines"></div>
+  <div class="hero-bg" id="heroBg"></div>
   <div class="wrap hero-inner">
     <span class="eyebrow">Accra, Ghana</span>
     <h1>Law, leadership,<br>and a business built<br>on <em>keeping promises</em>.</h1>
@@ -276,4 +282,5 @@ section{padding:64px 0;border-top:1px solid var(--line);}
     </div>
   </div>
 </footer>
+<script src="render.js"></script>
 </body></html>

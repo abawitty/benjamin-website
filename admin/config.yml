@@ -16,129 +16,162 @@ collections:
         label: "Logo & Global Settings"
         name: "site"
         fields:
-          - { label: "Site Logo", name: "logo", widget: "image", hint: "Shown in the navigation bar, hero, and Legal Tree panel." }
-
-  - name: "home"
-    label: "Homepage — Hero"
-    files:
-      - file: "content/home.json"
-        label: "Hero Content"
-        name: "home"
-        fields:
-          - label: "Heading Lines"
-            name: "headingLines"
-            widget: "list"
-            hint: "Each item is one line of the big heading. Wrap a word in *asterisks* to italicize/highlight it, e.g. 'Building toward the *bar*.'"
-            field: { label: "Line", name: "line", widget: "string" }
-          - { label: "Lede Paragraph", name: "lede", widget: "text" }
-          - label: "Tags"
-            name: "tags"
-            widget: "list"
-            hint: "Short pill labels under the lede, e.g. 'Pre-Bar Candidate — Ghana School of Law'"
-            field: { label: "Tag", name: "tag", widget: "string" }
-          - { label: "Primary Button Text", name: "ctaPrimary", widget: "string" }
-          - { label: "Secondary Button Text", name: "ctaSecondary", widget: "string" }
+          - { label: "Site Logo", name: "logo", widget: "image", hint: "Shown in the navigation bar on every page." }
 
   - name: "about"
-    label: "About Section"
+    label: "About Page"
     files:
       - file: "content/about.json"
         label: "About Content"
         name: "about"
         fields:
-          - { label: "Portrait Photo", name: "photo", widget: "image", required: false, hint: "Leave empty to show the placeholder box instead." }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Lede", name: "lede", widget: "text" }
           - label: "Paragraphs"
             name: "paragraphs"
             widget: "list"
-            hint: "Wrap words in **double asterisks** to make them bold. The first paragraph renders larger."
+            hint: "Wrap words in **double asterisks** to make them bold."
             field: { label: "Paragraph", name: "text", widget: "text" }
-          - label: "Stats"
-            name: "stats"
-            widget: "list"
+          - label: "Guiding Principles"
+            name: "principles"
+            widget: "object"
             fields:
-              - { label: "Number", name: "num", widget: "string" }
-              - { label: "Label", name: "label", widget: "string" }
-
-  - name: "practice"
-    label: "Practice Areas"
-    files:
-      - file: "content/practice.json"
-        label: "Practice Areas"
-        name: "practice"
-        fields:
-          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
-          - { label: "Section Heading", name: "heading", widget: "string" }
-          - label: "Cards"
-            name: "cards"
-            widget: "list"
-            summary: "{{title}}"
-            fields:
-              - { label: "Tag (e.g. '01 — Governance')", name: "tag", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
 
   - name: "experience"
-    label: "Experience"
+    label: "Experience Page"
     files:
       - file: "content/experience.json"
-        label: "Experience"
+        label: "Experience Content"
         name: "experience"
         fields:
-          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
-          - { label: "Section Heading", name: "heading", widget: "string" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Lede", name: "lede", widget: "text" }
           - label: "Clusters"
             name: "clusters"
             widget: "list"
             summary: "{{label}}"
-            hint: "A cluster groups related roles under one label, e.g. 'Corporate Governance & Administration'."
+            hint: "A cluster groups related roles under one label, e.g. 'Legal & Student Governance'."
             fields:
               - { label: "Cluster Label", name: "label", widget: "string" }
-              - label: "Roles"
-                name: "items"
+              - label: "Entries"
+                name: "entries"
                 widget: "list"
-                summary: "{{org}} — {{role}}"
+                summary: "{{org}} — {{title}}"
                 fields:
                   - { label: "Organization", name: "org", widget: "string" }
                   - { label: "Date Range", name: "date", widget: "string" }
-                  - { label: "Role", name: "role", widget: "string" }
-                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Title/Role", name: "title", widget: "string" }
+                  - label: "Paragraphs"
+                    name: "paragraphs"
+                    widget: "list"
+                    field: { label: "Paragraph", name: "text", widget: "text" }
 
-  - name: "legaltree"
-    label: "Legal Tree (Featured Initiative)"
+  - name: "education"
+    label: "Education Page"
     files:
-      - file: "content/legaltree.json"
-        label: "Legal Tree Section"
-        name: "legaltree"
+      - file: "content/education.json"
+        label: "Education Content"
+        name: "education"
         fields:
-          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
-          - { label: "Section Heading", name: "heading", widget: "string" }
-          - label: "Paragraphs"
-            name: "paragraphs"
-            widget: "list"
-            field: { label: "Paragraph", name: "text", widget: "text" }
-          - { label: "Panel Heading", name: "panelHeading", widget: "string" }
-          - { label: "Panel Text", name: "panelText", widget: "text" }
-          - { label: "Panel CTA Text", name: "ctaText", widget: "string" }
-
-  - name: "credentials"
-    label: "Credentials"
-    files:
-      - file: "content/credentials.json"
-        label: "Credentials Section"
-        name: "credentials"
-        fields:
-          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
-          - { label: "Section Heading", name: "heading", widget: "string" }
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            summary: "{{title}}"
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
             fields:
-              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Lede", name: "lede", widget: "text" }
+          - label: "Entries"
+            name: "entries"
+            widget: "list"
+            summary: "{{org}} — {{title}}"
+            fields:
+              - { label: "Institution", name: "org", widget: "string" }
               - { label: "Date Range", name: "date", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Verify Link Text", name: "verifyLabel", widget: "string", required: false }
-              - { label: "Verify Link URL", name: "verifyUrl", widget: "string", required: false }
+              - { label: "Qualification", name: "title", widget: "string" }
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "text", widget: "text" }
+
+  - name: "skills"
+    label: "Skills Page"
+    files:
+      - file: "content/skills.json"
+        label: "Skills Content"
+        name: "skills"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Lede", name: "lede", widget: "text" }
+          - label: "Core Competencies"
+            name: "competencies"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - label: "Paragraphs"
+                    name: "paragraphs"
+                    widget: "list"
+                    field: { label: "Paragraph", name: "text", widget: "text" }
+          - label: "AI Literacy"
+            name: "aiLiteracy"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - label: "Paragraphs"
+                    name: "paragraphs"
+                    widget: "list"
+                    field: { label: "Paragraph", name: "text", widget: "text" }
+          - label: "Awards & Recognition"
+            name: "awards"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - label: "Paragraphs"
+                    name: "paragraphs"
+                    widget: "list"
+                    field: { label: "Paragraph", name: "text", widget: "text" }
+          - { label: "Professional Memberships Section Eyebrow", name: "membershipsEyebrow", widget: "string" }
 
   - name: "memberships"
     label: "Memberships"
@@ -151,36 +184,10 @@ collections:
             name: "memberships"
             widget: "list"
             summary: "{{name}}"
-            hint: "Shown on the Contact page."
+            hint: "Shown on the Skills page."
             fields:
               - { label: "Organization Name", name: "name", widget: "string" }
               - { label: "Years", name: "years", widget: "string" }
-
-  - name: "footer"
-    label: "Homepage — Closing/Contact Section"
-    files:
-      - file: "content/footer.json"
-        label: "Footer Content"
-        name: "footer"
-        fields:
-          - { label: "Section Eyebrow", name: "eyebrow", widget: "string" }
-          - { label: "Section Heading", name: "heading", widget: "string" }
-          - { label: "'Support Legal Tree' Link Text", name: "legalTreeLinkText", widget: "string" }
-          - { label: "Copyright Line", name: "copyright", widget: "string" }
-          - { label: "Tagline", name: "tagline", widget: "string" }
-
-  - name: "contact"
-    label: "Contact Info"
-    files:
-      - file: "content/contact.json"
-        label: "Contact Details"
-        name: "contact"
-        fields:
-          - { label: "Intro Text", name: "intro", widget: "text" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Phone", name: "phone", widget: "string" }
-          - { label: "Location", name: "location", widget: "string" }
-          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
 
   - name: "media"
     label: "Media Gallery"
