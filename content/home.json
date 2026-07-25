@@ -1,7 +1,11 @@
 {
   "hero": {
     "eyebrow": "Accra, Ghana",
-    "headingLines": ["Law, leadership,", "and a business built", "on *keeping promises*."],
+    "headingLines": [
+      "Law, leadership,",
+      "and a business built",
+      "on *keeping promises*."
+    ],
     "lede": "I am a legal professional and student at the Ghana School of Law's Pre-Bar Course, beginning 1 September 2026. Alongside my legal training, I lead community and student organisations across West Africa, and I own and run Lawbenpina Ventures, an Accra-based import and consulting business.",
     "tags": [
       "Pre-Bar Student, Ghana School of Law (from Sept 2026)",
@@ -10,12 +14,24 @@
       "Owner, Lawbenpina Ventures"
     ],
     "ctaPrimaryText": "View Experience",
-    "ctaSecondaryText": "Send an Import Request on WhatsApp",
+    "ctaSecondaryText": "Want to support my business? Whatsapp Lawbenpina Ventures",
     "stats": [
-      { "num": "10+", "label": "Years in Governance & Enterprise" },
-      { "num": "9+", "label": "Years Running Lawbenpina Ventures" },
-      { "num": "20+", "label": "Countries Represented in Advocacy" },
-      { "num": "15+", "label": "Partner Organisations" }
+      {
+        "num": "10+",
+        "label": "Years in Governance & Enterprise"
+      },
+      {
+        "num": "9+",
+        "label": "Years Running Lawbenpina Ventures"
+      },
+      {
+        "num": "5+",
+        "label": "Countries Represented in Advocacy"
+      },
+      {
+        "num": "15+",
+        "label": "Partner Organisations"
+      }
     ]
   },
   "lawbenpina": {
@@ -35,25 +51,67 @@
     "heading": "The Dr. Attakora Legal Tree",
     "paragraphs": [
       "During my term as Vice President of the Law Students' Union at Kings University College, I sole-sponsored and built the Dr. Attakora Legal Tree, a digital resource hub named in honour of a respected member of the Faculty of Law. The Legal Tree was created to close the distance between students and the material they need most: past examination questions, core textbooks, law reports, and journal articles, all organised in one place and accessible to every student rather than only those with access to a well-stocked library.",
-      "Alongside the document library, the Legal Tree carries \"Ask Attakora,\" a chatbot that lets students put quick doctrinal questions to an AI assistant trained on the resources in the tree, so a student revising late at night is not left waiting until the next lecture for an answer. Together with the LSU website that I also funded and developed, the Legal Tree remains one of the initiatives from my time in student leadership that I am proudest of, because it outlived my term in office and continues to serve students who came after me."
+      "Alongside the document library, the Legal Tree is to carry \"Ask Attakora,\" a chatbot that is to let students put quick doctrinal questions to an AI assistant trained on the resources in the tree, so a student revising late at night is not left waiting until the next lecture for an answer. Together with the LSU website that I also funded and developed, the Legal Tree remains one of the initiatives from my time in student leadership that I am proudest of, because it outlived my term in office and continues to serve students who came after me."
     ],
     "list": [
-      { "title": "Past Questions", "text": "Organised by course and year" },
-      { "title": "Textbooks & Law Reports", "text": "Core reading in one library" },
-      { "title": "Journals", "text": "Academic articles for research" },
-      { "title": "Ask Attakora", "text": "AI chatbot for quick doctrinal queries" }
+      {
+        "title": "Past Questions",
+        "text": "Organised by course and year"
+      },
+      {
+        "title": "Textbooks & Law Reports",
+        "text": "Core reading in one library"
+      },
+      {
+        "title": "Journals",
+        "text": "Academic articles for research"
+      },
+      {
+        "title": "Ask Attakora",
+        "text": "AI chatbot for quick doctrinal queries"
+      }
     ]
   },
   "explore": {
     "eyebrow": "Explore",
     "heading": "Get to Know My Work",
     "cards": [
-      { "number": "01", "title": "About", "text": "Legal training, current studies, and the guiding principles behind my work.", "link": "about.html" },
-      { "number": "02", "title": "Experience", "text": "Legal, governance, enterprise, and civic leadership roles.", "link": "experience.html" },
-      { "number": "03", "title": "Education", "text": "Degrees, diplomas, and certifications.", "link": "education.html" },
-      { "number": "04", "title": "Publications", "text": "My SSRN article on advance-fee fraud and Nigeria's section 419.", "link": "publications.html" },
-      { "number": "05", "title": "Skills", "text": "Core competencies, awards, and memberships.", "link": "skills.html" },
-      { "number": "06", "title": "Lawbenpina Ventures", "text": "My import and consulting business, and how to order.", "link": "ventures.html" }
+      {
+        "number": "01",
+        "title": "About",
+        "text": "Legal training, current studies, and the guiding principles behind my work.",
+        "link": "about.html"
+      },
+      {
+        "number": "02",
+        "title": "Experience",
+        "text": "Legal, governance, enterprise, and civic leadership roles.",
+        "link": "experience.html"
+      },
+      {
+        "number": "03",
+        "title": "Education",
+        "text": "Degrees, diplomas, and certifications.",
+        "link": "education.html"
+      },
+      {
+        "number": "04",
+        "title": "Publications",
+        "text": "My SSRN article on advance-fee fraud and Nigeria's section 419.",
+        "link": "publications.html"
+      },
+      {
+        "number": "05",
+        "title": "Skills",
+        "text": "Core competencies, awards, and memberships.",
+        "link": "skills.html"
+      },
+      {
+        "number": "06",
+        "title": "Lawbenpina Ventures",
+        "text": "My import and consulting business, and how to order.",
+        "link": "ventures.html"
+      }
     ]
   }
 }
