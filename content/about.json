@@ -5,7 +5,7 @@
     "lede": "A legal professional, civic leader, and entrepreneur, combining formal legal training with hands-on experience in governance, real estate, and enterprise."
   },
   "paragraphs": [
-    "My legal training is complete. I hold a Bachelor of Laws (LLB) from Kings University College, awarded May 2026, and what lies ahead now is the professional transition into practice: I begin the Pre-Bar Course at the Ghana School of Law on 1 September 2026, the entry point into Law Practice Training under Ghana's reformed legal education framework.",
+    "I hold a Bachelor of Laws (LLB) from Kings University College, awarded May 2026, and what lies ahead now is the professional transition into practice: I begin the Pre-Bar Course at the Ghana School of Law on 1 September 2026, the entry point into Law Practice Training under Ghana's reformed legal education framework.",
     "Alongside that, I am completing an LLM in International Law, Security and Diplomacy at the University of Gold Coast, and I hold an MBA from Atlanta College of Liberal Arts and Sciences. I have always believed that a lawyer who also understands business, governance, and policy is better placed to solve the problems clients actually bring through the door, so I have deliberately built a background that spans all three.",
     "As former Vice President of the Law Students' Union and former Legal Affairs Commissioner of the Kings University College SRC, I authored the first amendment to the SRC Constitution, wrote the first Standing Orders of its Parliament, and founded the documentary records, the Votes and Proceedings, the Official Report, and the Summons, that now give the Parliament a verifiable institutional memory. I also sole-sponsored the Dr. Attakora Legal Tree, a resource hub that continues to serve law students at Kings University College.",
     "Outside law and student governance, I own and run Lawbenpina Ventures, an Accra-based consulting and import business I founded in 2017, and I hold company secretarial and board positions across real estate, construction, and legal services firms. I also chair and lead several student and civic organisations, including the University Student Chamber West African Committee and the Adom Community League, work that has taken me across more than twenty countries in advocacy for youth and student welfare."
@@ -14,10 +14,22 @@
     "eyebrow": "Guiding Principles",
     "heading": "How I Approach the Work",
     "cards": [
-      { "title": "Written First", "text": "No executive action of legal consequence should proceed without a written opinion on the record. I carried this discipline through my entire term as Legal Affairs Commissioner, and I apply it to client and business matters alike." },
-      { "title": "Institutions Over Individuals", "text": "Offices should outlive the people who hold them. Whether in student parliament or in a client's boardroom, I try to leave behind documented process, not just a good outcome on the day." },
-      { "title": "Interdisciplinary by Design", "text": "Legal training alone rarely solves a modern problem. My MBA, my LLM in security and diplomacy, and my years in real estate and construction governance all feed directly into how I think about legal risk." },
-      { "title": "Service That Compounds", "text": "From the Legal Tree to Lawbenpina Ventures, I try to build things that keep working after I have moved on to the next chapter, rather than one-off wins." }
+      {
+        "title": "Written First",
+        "text": "No executive action of legal consequence should proceed without a written opinion on the record. I carried this discipline through my entire term as Legal Affairs Commissioner, and I apply it to client and business matters alike."
+      },
+      {
+        "title": "Institutions Over Individuals",
+        "text": "Offices should outlive the people who hold them. Whether in student parliament or in a client's boardroom, I try to leave behind documented process, not just a good outcome on the day."
+      },
+      {
+        "title": "Interdisciplinary by Design",
+        "text": "Legal training alone rarely solves a modern problem. My MBA, my LLM in security and diplomacy, and my years in real estate and construction governance all feed directly into how I think about legal risk."
+      },
+      {
+        "title": "Service That Compounds",
+        "text": "From the Legal Tree to Lawbenpina Ventures, I try to build things that keep working after I have moved on to the next chapter, rather than one-off wins."
+      }
     ]
   }
 }
