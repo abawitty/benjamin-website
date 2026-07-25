@@ -94,6 +94,57 @@ async function renderHeroBackground() {
   startHeroSlideshow(container, album.photos.map((p) => p.src));
 }
 
+// ---- HOME (index.html) ----
+async function renderHomePage() {
+  const root = document.getElementById("homeHeroHeading");
+  if (!root) return;
+  const data = await loadJSON("content/home.json");
+
+  document.getElementById("homeHeroEyebrow").textContent = data.hero.eyebrow;
+  root.innerHTML = data.hero.headingLines.map((line) => mdEm(line)).join("<br>");
+  document.getElementById("homeHeroLede").textContent = data.hero.lede;
+  document.getElementById("homeHeroTags").innerHTML = data.hero.tags
+    .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
+    .join("");
+  document.getElementById("homeHeroCtaPrimary").textContent = data.hero.ctaPrimaryText;
+  document.getElementById("homeHeroCtaSecondary").textContent = data.hero.ctaSecondaryText;
+  document.getElementById("homeHeroStats").innerHTML = data.hero.stats
+    .map((s) => `<div class="stat"><b>${escapeHtml(s.num)}</b><span>${escapeHtml(s.label)}</span></div>`)
+    .join("");
+
+  const lb = data.lawbenpina;
+  document.getElementById("homeLbEyebrow").textContent = lb.eyebrow;
+  document.getElementById("homeLbHeading").textContent = lb.heading;
+  document.getElementById("homeLbParagraph").innerHTML = mdBold(lb.paragraph);
+  document.getElementById("homeLbBullets").innerHTML = lb.bullets
+    .map((b) => `<li>${mdBold(b)}</li>`)
+    .join("");
+  document.getElementById("homeLbSideText").textContent = lb.sideText;
+  document.getElementById("homeLbWaNumber").textContent = lb.waNumber;
+
+  const lt = data.legaltree;
+  document.getElementById("homeLtEyebrow").textContent = lt.eyebrow;
+  document.getElementById("homeLtHeading").textContent = lt.heading;
+  document.getElementById("homeLtParagraphs").innerHTML = lt.paragraphs
+    .map((p) => `<p>${mdBold(p)}</p>`)
+    .join("");
+  document.getElementById("homeLtList").innerHTML = lt.list
+    .map((item) => `<div><strong>${escapeHtml(item.title)}</strong><br>${escapeHtml(item.text)}</div>`)
+    .join("");
+
+  const ex = data.explore;
+  document.getElementById("homeExploreEyebrow").textContent = ex.eyebrow;
+  document.getElementById("homeExploreHeading").textContent = ex.heading;
+  document.getElementById("homeExploreGrid").innerHTML = ex.cards
+    .map(
+      (c) =>
+        `<a class="explore-card" href="${escapeHtml(c.link)}"><span class="eyebrow">${escapeHtml(c.number)}</span><h3>${escapeHtml(c.title)}</h3><p>${escapeHtml(c.text)}</p></a>`
+    )
+    .join("");
+
+  window.applyScrollIn();
+}
+
 // ---- ABOUT (about.html) ----
 async function renderAboutPage() {
   const root = document.getElementById("aboutParagraphs");
@@ -269,6 +320,7 @@ async function renderMedia() {
 renderSiteSettings();
 renderMedia();
 renderHeroBackground();
+renderHomePage();
 renderAboutPage();
 renderExperiencePage();
 renderEducationPage();

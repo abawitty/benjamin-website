@@ -18,6 +18,82 @@ collections:
         fields:
           - { label: "Site Logo", name: "logo", widget: "image", hint: "Shown in the navigation bar on every page." }
 
+  - name: "home"
+    label: "Homepage"
+    files:
+      - file: "content/home.json"
+        label: "Homepage Content"
+        name: "home"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - label: "Heading Lines"
+                name: "headingLines"
+                widget: "list"
+                hint: "Each item is one line of the big heading. Wrap a word in *asterisks* to italicize/highlight it."
+                field: { label: "Line", name: "line", widget: "string" }
+              - { label: "Lede Paragraph", name: "lede", widget: "text" }
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Primary Button Text", name: "ctaPrimaryText", widget: "string" }
+              - { label: "Secondary Button Text", name: "ctaSecondaryText", widget: "string" }
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "Number", name: "num", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+          - label: "Lawbenpina Ventures Banner"
+            name: "lawbenpina"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Paragraph", name: "paragraph", widget: "text" }
+              - label: "Bullets"
+                name: "bullets"
+                widget: "list"
+                field: { label: "Bullet", name: "text", widget: "string" }
+              - { label: "Side Panel Text", name: "sideText", widget: "text" }
+              - { label: "WhatsApp Number", name: "waNumber", widget: "string" }
+          - label: "Legal Tree Section"
+            name: "legaltree"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "text", widget: "text" }
+              - label: "Side List"
+                name: "list"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "string" }
+          - label: "Explore Section"
+            name: "explore"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Number", name: "number", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "Link", name: "link", widget: "string" }
+
   - name: "about"
     label: "About Page"
     files:
