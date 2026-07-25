@@ -101,6 +101,7 @@ collections:
         label: "About Content"
         name: "about"
         fields:
+          - { label: "Portrait Photo", name: "photo", widget: "image", required: false, hint: "Shown on the About page and used as the preview image when this site's link is shared." }
           - label: "Hero"
             name: "hero"
             widget: "object"

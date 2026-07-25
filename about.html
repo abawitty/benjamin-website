@@ -114,6 +114,11 @@ section{padding:64px 0;border-top:1px solid var(--line);}
 .lt-list div:last-child{border-bottom:none;}
 @media (max-width:760px){.lt-grid{grid-template-columns:1fr;}}
 
+/* -------- about portrait -------- */
+.about-portrait{width:200px;border-radius:16px;overflow:hidden;margin-bottom:28px;border:1px solid var(--line);}
+.about-portrait:empty{display:none;}
+.about-portrait img{width:100%;display:block;}
+
 /* -------- skills grid -------- */
 .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
 .skill-card{border:1px solid var(--line);border-radius:14px;padding:22px;}
@@ -184,6 +189,7 @@ section{padding:64px 0;border-top:1px solid var(--line);}
 
 <section>
   <div class="wrap">
+    <div class="about-portrait" id="aboutPortrait"></div>
     <div id="aboutParagraphs"></div>
 
     <div class="section-head" style="margin-top:60px;">

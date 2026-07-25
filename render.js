@@ -155,6 +155,11 @@ async function renderAboutPage() {
   document.getElementById("heroHeading").textContent = data.hero.heading;
   document.getElementById("heroLede").textContent = data.hero.lede;
 
+  if (data.photo) {
+    document.getElementById("aboutPortrait").innerHTML =
+      `<img src="${escapeHtml(data.photo)}" alt="Addo Benjamin Armah" />`;
+  }
+
   root.innerHTML = data.paragraphs.map((p) => `<p>${mdBold(p)}</p>`).join("");
 
   document.getElementById("principlesEyebrow").textContent = data.principles.eyebrow;
