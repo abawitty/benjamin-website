@@ -1,8 +1,10 @@
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+}
 
 // ===== ACTIVE NAV LINK (highlight current page) =====
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
