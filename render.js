@@ -85,13 +85,17 @@ function startHeroSlideshow(container, images) {
   }, 5000);
 }
 
+const HERO_SLIDESHOW_ALBUMS = ["Trip to China", "UIMUN 2026 - Best Delegate, ICJ"];
+
 async function renderHeroBackground() {
   const container = document.getElementById("heroBg");
   if (!container) return;
   const data = await loadJSON("content/media.json");
-  const album = data.albums.find((a) => a.title === "Trip to China");
-  if (!album || !album.photos.length) return;
-  startHeroSlideshow(container, album.photos.map((p) => p.src));
+  const images = data.albums
+    .filter((a) => HERO_SLIDESHOW_ALBUMS.includes(a.title))
+    .flatMap((a) => a.photos.map((p) => p.src));
+  if (!images.length) return;
+  startHeroSlideshow(container, images);
 }
 
 // ---- HOME (index.html) ----
